@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+  <meta name="description" content="Penn Course Review is a tool for students at the University of
+Pennsylvania to search for the best professor and classes on campus. ">
+  <link href="apple-touch-icon-57x57.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-57x57.png>" sizes="57x57" rel="../media/front-end/image/apple-touch-icon-57x57-precomposed.png">
+  <link href="apple-touch-icon-72x72.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-72x72.png>" sizes="72x72" rel="../media/front-end/image/apple-touch-icon-72x72-precomposed.png">
+  <link href="apple-touch-icon-114x114.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-114x114.png>" sizes="114x114" rel="../media/front-end/image/apple-touch-icon-114x114-precomposed.png">
+  <link href="apple-touch-icon-144x144.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-144x144.png>" sizes="144x144" rel="../media/front-end/image/apple-touch-icon-144x144-precomposed.png">
+  <link href="apple-touch-icon-76x76.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-76x76.png>" sizes="76x76" rel="../media/front-end/image/apple-touch-icon-76x76-precomposed.png">
+  <link href="apple-touch-icon-60x60.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-60x60.png>" sizes="60x60" rel="../media/front-end/image/apple-touch-icon-60x60-precomposed.png">
+  <link href="apple-touch-icon-152x152.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-152x152.png>" sizes="152x152" rel="../media/front-end/image/apple-touch-icon-152x152-precomposed.png">
+  <link href="apple-touch-icon-120x120.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-120x120.png>" sizes="120x120" rel="../media/front-end/image/apple-touch-icon-120x120-precomposed.png">
+
+  <link rel="shortcut icon" href="../media/front-end/image/favicon.ico
+<view-source:https://penncoursereview.com/media/front-end/image/favicon.ico>">
+  <link type="text/css" href="../media/front-end/css/960_12_col.css
+<view-source:https://penncoursereview.com/media/front-end/css/960_12_col.css>" rel="stylesheet" />
+  <link type="text/css" href="../media/front-end/css/reset.css
+<view-source:https://penncoursereview.com/media/front-end/css/reset.css>" rel="stylesheet" />
+  <link type="text/css" href="../media/front-end/css/flick/jquery-ui-1.8.16.custom.css
+<view-source:https://penncoursereview.com/media/front-end/css/flick/jquery-ui-1.8.16.custom.css>" rel="stylesheet" />
+
+  <link type="text/css" href="../media/front-end/css/base.css
+<view-source:https://penncoursereview.com/media/front-end/css/base.css>" rel="stylesheet" />
+  <link type="text/css" href="../media/front-end/css/searchbox.css
+<view-source:https://penncoursereview.com/media/front-end/css/searchbox.css>" rel="stylesheet" />
+
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400
+<view-source:https://fonts.googleapis.com/css?family=Lato:100,300,400>' rel='stylesheet' type='text/css'>
+
+  
+  <link type="text/css" href="../media/front-end/css/tutorial_overlay.css
+<view-source:https://penncoursereview.com/media/front-end/css/tutorial_overlay.css>" rel="stylesheet" />
+
+
+  <title>
+  Penn Course Review - CIS-160
+</title>
+
+  <script type="text/javascript" src="../media/front-end/js/jquery-1.6.2.min.js
+<view-source:https://penncoursereview.com/media/front-end/js/jquery-1.6.2.min.js>"></script>
+  <script type="text/javascript" src="../media/front-end/js/jquery-ui-1.8.16.custom.min.js
+<view-source:https://penncoursereview.com/media/front-end/js/jquery-ui-1.8.16.custom.min.js>"></script>
+  <script type="text/javascript" src="../media/front-end/js/jquery.cookie.js
+<view-source:https://penncoursereview.com/media/front-end/js/jquery.cookie.js>"></script>
+
+  <script type="text/javascript" src="../media/front-end/js/searchbox.js
+<view-source:https://penncoursereview.com/media/front-end/js/searchbox.js>"></script>
+
+  
+  <![if ! IE 7]>
+  <script src="../media/front-end/js/jquery.tablesorter.min.js
+<view-source:https://penncoursereview.com/media/front-end/js/jquery.tablesorter.min.js>"></script>
+  <![endif]><!--[if IE 7]>
+  <script src="../media/front-end/js/jquery.tablesorter.ie8fix.min.js"></script>
+  <![endif]-->
+  <script src="../media/front-end/js/item_base.js
+<view-source:https://penncoursereview.com/media/front-end/js/item_base.js>"></script>
+
+
+  
+
+  <!--[if IE 8]>
+  <style>
+  #course-table .col_icon {
+    width:11px;
+  }
+  </style>
+  <![endif]-->
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">var mpq=[];mpq.push(["init","9aa52fc2877144ac5d5d92002694f984"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
+  </script>
+  <!-- end Mixpanel -->
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21029575-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</head>
+
+<body>
+  <div class="background"></div>
+  <div id="wrapper">
+    
+      <div id="header"><div id="header-bg">
+        <div class="container_12">
+          
+            <a href="../ <view-source:https://penncoursereview.com/>"><div id="title" class="header-item">
+              Penn Course Review
+            </div></a>
+            <div id="linkbar" class="header-item">
+              <a href="../about <view-source:https://penncoursereview.com/about>">About</a>
+<span>|</span>
+<a href="../faq <view-source:https://penncoursereview.com/faq>">FAQs</a>
+<span>|</span>
+<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFNZYW92cFM1YnpKUzlLcXRDZVQ4VGc6MQ#gid=0faq
+<view-source:https://docs.google.com/spreadsheet/viewform?formkey=dFNZYW92cFM1YnpKUzlLcXRDZVQ4VGc6MQ#gid=0faq>">Feedback</a>
+<span>|</span>
+<a href="https://weblogin.pennkey.upenn.edu/logout
+<view-source:https://weblogin.pennkey.upenn.edu/logout>">Logout</a>
+
+            </div>
+            <div id="searchbar" class="header-item">
+              <input id="searchbox" type="text" value=""/>
+<input id="search-submit" type="submit" value=""/>
+<div id="loading-container" class="ui-menu ui-autocomplete ui-widget">
+</div>
+<div id="results_top"></div>
+            </div>
+            <div class="clear"></div>
+          
+        </div>
+      </div></div>
+    
+
+    
+    <div id="banner"><div id="banner-bg">
+      <div id="banner-inner" class="container_12">
+        
+  <div id="banner-info">
+    
+<p class="title">CIS 160
+<span class="crosslist">
+  
+</span>
+<p class="subtitle">Math Found Comp Sci</p>
+<p class="desc">What are the basic mathematical concepts and techniques needed in computer science? This course provides an introduction to proof principles and logics, functions and relations, induction principles, combinatorics and graph theory, as well as a rigorous grounding in writing and reading mathematical proofs. 
+
+</p>
+
+  </div>
+  
+    
+
+<div id="banner-score">
+    <div class="scoreboxrow">
+      <div class="scoredesc">
+        <p class="title">Average</p>
+        <p class="subtitle">17 Sections</p>
+      </div>
+
+      <div class="scorebox">
+        <p class="num">2.5</p>
+        <p class="desc">Course</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+      <div class="scorebox">
+        <p class="num">2.8</p>
+        <p class="desc">Instructor</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+      <div class="scorebox">
+        <p class="num">3.3</p>
+        <p class="desc">Difficulty</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+    </div>
+    <div class="scoreboxrow">
+      
+      <div class="scoredesc">
+        <p class="title">Most Recent</p>
+        <p class="subtitle">Spring 2016</p>
+      </div>
+
+      <div class="scorebox">
+        <p class="num">2.2</p>
+        <p class="desc">Course</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+      <div class="scorebox">
+        <p class="num">2.3</p>
+        <p class="desc">Instructor</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+      <div class="scorebox">
+        <p class="num">3.6</p>
+        <p class="desc">Difficulty</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+      
+    </div>
+</div>
+
+
+  
+  <div class="clear"></div>
+
+      </div>
+    </div></div>
+    
+
+    
+    <div id="content">
+      <div class="container_12">
+        
+  
+
+  <div id="content-settings" class="grid_12">
+    <div id="settings-viewmode" class="grid_4 alpha">
+      <span class="label">View:&nbsp;</span>
+      <span id="view_average" class="button selected" onclick="set_viewmode(0)">Average</span>
+      <span id="view_recent" class="button" onclick="set_viewmode(1)">Most Recent</span>
+    </div>
+    <div id="settings-other" class="grid_8 omega">
+      <span class="button" onclick="$('#tutorial_overlay').show()">&nbsp;<strong>?</strong>&nbsp;</span>
+      <span class="button" onclick="toggle_choose_cols()">Choose Columns</span>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div id="content-section" class="grid_12">
+    <div id="table-div">
+      <table id="course-table" count="0">
+        <thead>
+          <tr>
+            <th scope="col" class="col_icon">
+              
+              <div class="fold-icon" onclick="toggle_course_row_all()" title="Expand All"></div>
+              
+            </th>
+            
+<th scope="col" class="col_instructor">
+  <div class="sort-icon"></div>
+  <span class="th-text">Instructor</span>
+</th>
+
+            
+            
+            <th scope="col" class="col_rCourseQuality">
+              <div class="sort-icon"></div>
+              <span class="th-text">Course Quality</span>
+            </th>
+            
+            <th scope="col" class="col_rInstructorQuality">
+              <div class="sort-icon"></div>
+              <span class="th-text">Instructor Quality</span>
+            </th>
+            
+            <th scope="col" class="col_rDifficulty">
+              <div class="sort-icon"></div>
+              <span class="th-text">Difficulty</span>
+            </th>
+            
+            <th scope="col" class="col_rAmountLearned">
+              <div class="sort-icon"></div>
+              <span class="th-text">Amount Learned</span>
+            </th>
+            
+            <th scope="col" class="col_rWorkRequired">
+              <div class="sort-icon"></div>
+              <span class="th-text">Amount of Work</span>
+            </th>
+            
+            <th scope="col" class="col_rReadingsValue">
+              <div class="sort-icon"></div>
+              <span class="th-text">Value of Readings</span>
+            </th>
+            
+            <th scope="col" class="col_rCommAbility">
+              <div class="sort-icon"></div>
+              <span class="th-text">Instructor Communication</span>
+            </th>
+            
+            <th scope="col" class="col_rInstructorAccess">
+              <div class="sort-icon"></div>
+              <span class="th-text">Instructor Accessibility</span>
+            </th>
+            
+            <th scope="col" class="col_rStimulateInterest">
+              <div class="sort-icon"></div>
+              <span class="th-text">Ability to Stimulate Interest</span>
+            </th>
+            
+            <th scope="col" class="col_rTAQuality">
+              <div class="sort-icon"></div>
+              <span class="th-text">TA Quality</span>
+            </th>
+            
+            <th scope="col" class="col_rRecommendMajor">
+              <div class="sort-icon"></div>
+              <span class="th-text">Recommend for Majors</span>
+            </th>
+            
+            <th scope="col" class="col_rRecommendNonMajor">
+              <div class="sort-icon"></div>
+              <span class="th-text">Recommend for Non-Majors</span>
+            </th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+  
+  
+    
+    <tr id="row_display_0" class="row_display" onclick="toggle_course_row(0)">
+      <td class="col_icon">
+        <div class="fold-icon" title="Expand"></div>
+      </td>
+      <td class="col_instructor">
+        <a href="../instructor/248-JEAN-HENRI-GALLIER
+<view-source:https://penncoursereview.com/instructor/248-JEAN-HENRI-GALLIER>" onclick="toggle_course_row(0)">
+          JEAN HENRI GALLIER
+        </a>
+      </td>
+      
+        
+        
+          
+          <td class="col_rCourseQuality">
+            <span class="cell_average">1.78</span>
+            <span class="cell_recent">1.82</span>
+          </td>
+          
+          <td class="col_rInstructorQuality">
+            <span class="cell_average">2.37</span>
+            <span class="cell_recent">2.24</span>
+          </td>
+          
+          <td class="col_rDifficulty">
+            <span class="cell_average">3.36</span>
+            <span class="cell_recent">3.23</span>
+          </td>
+          
+          <td class="col_rAmountLearned">
+            <span class="cell_average">2.08</span>
+            <span class="cell_recent">2.08</span>
+          </td>
+          
+          <td class="col_rWorkRequired">
+            <span class="cell_average">3.14</span>
+            <span class="cell_recent">3.13</span>
+          </td>
+          
+          <td class="col_rReadingsValue">
+            <span class="cell_average">2.07</span>
+            <span class="cell_recent">2.11</span>
+          </td>
+          
+          <td class="col_rCommAbility">
+            <span class="cell_average">1.72</span>
+            <span class="cell_recent">1.63</span>
+          </td>
+          
+          <td class="col_rInstructorAccess">
+            <span class="cell_average">3.33</span>
+            <span class="cell_recent">3.33</span>
+          </td>
+          
+          <td class="col_rStimulateInterest">
+            <span class="cell_average">2.21</span>
+            <span class="cell_recent">2.05</span>
+          </td>
+          
+          <td class="col_rTAQuality">
+            <span class="cell_average"></span>
+            <span class="cell_recent"></span>
+          </td>
+          
+          <td class="col_rRecommendMajor">
+            <span class="cell_average">2.99</span>
+            <span class="cell_recent">3.17</span>
+          </td>
+          
+          <td class="col_rRecommendNonMajor">
+            <span class="cell_average">0.87</span>
+            <span class="cell_recent">0.84</span>
+          </td>
+          
+        
+    </tr>
+    <tr class="row_hidden" id="row_hidden_0">
+      <td class="td_hidden" colspan="50">
+<table id="section-table" class="section-table">
+  <thead>
+    <tr>
+      <td class="sec_th col_icon">
+        <div title="Comments"></div>
+      </td>
+      <td class="sec_th col_semester">Semester</td>
+      <td class="sec_th col_name">Name</td>
+      <td class="sec_th col_section">Section</td>
+      <td class="sec_th col_responses">Responses</td>
+      
+      <td class="sec_th col_rCourseQuality">
+        Course Quality
+      </td>
+      
+      <td class="sec_th col_rInstructorQuality">
+        Instructor Quality
+      </td>
+      
+      <td class="sec_th col_rDifficulty">
+        Difficulty
+      </td>
+      
+      <td class="sec_th col_rAmountLearned">
+        Amount Learned
+      </td>
+      
+      <td class="sec_th col_rWorkRequired">
+        Amount of Work
+      </td>
+      
+      <td class="sec_th col_rReadingsValue">
+        Value of Readings
+      </td>
+      
+      <td class="sec_th col_rCommAbility">
+        Instructor Communication
+      </td>
+      
+      <td class="sec_th col_rInstructorAccess">
+        Instructor Accessibility
+      </td>
+      
+      <td class="sec_th col_rStimulateInterest">
+        Ability to Stimulate Interest
+      </td>
+      
+      <td class="sec_th col_rRecommendMajor">
+        Recommend for Majors
+      </td>
+      
+      <td class="sec_th col_rRecommendNonMajor">
+        Recommend for Non-Majors
+      </td>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+        <div class="comment-icon"
+          title="See Comments"
+          onclick="$('#row_hidden_0 .sec_row_hidden_0').toggle()">
+        </div>
+      
+      </td>
+      <td class="col_semester">Fall 2010</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">72/84</td>
+    
+      <td class="col_rCourseQuality">1.82</td>
+    
+      <td class="col_rInstructorQuality">2.24</td>
+    
+      <td class="col_rDifficulty">3.23</td>
+    
+      <td class="col_rAmountLearned">2.08</td>
+    
+      <td class="col_rWorkRequired">3.13</td>
+    
+      <td class="col_rReadingsValue">2.11</td>
+    
+      <td class="col_rCommAbility">1.63</td>
+    
+      <td class="col_rInstructorAccess">3.33</td>
+    
+      <td class="col_rStimulateInterest">2.05</td>
+    
+      <td class="col_rRecommendMajor">3.17</td>
+    
+      <td class="col_rRecommendNonMajor">0.84</td>
+    
+    </tr>
+  
+    <tr class="sec_row_hidden sec_row_hidden_0">
+      <td class="sec_td_hidden" colspan="50">
+        <p>The course deals with the question “what are the basic mathematical concepts and techniques needed in computer science?” It provides an introduction to proof principles and logics, functions and relations, induction principles, combinatorics and graph theory, as well as a rigorous grounding in writing and reading mathematical proof.
+<br />
+<br />Reviews of this course were quite diverse, as students characterized it as “interesting,” “challenging,” “difficult,” “a waste of time,” and “curious.” The content of the course was described by most students to be “confusing,” “abstract,” “dense,” and “hard to follow.” While some students seemed to enjoy the course, others found it to be pointless given that they spent most of their time “trying to figure out how to do problems” rather than “learning the material.” Several students felt that the homework assignments were extremely challenging, stating that they were “bordering on impossible.”  However, students reported that the professors and the TAs gave away the answers and the solutions during office hours, making it easy to do well in the course. Many students were, however, dissatisfied with the grading system.
+<br />
+<br />Students’ opinions about Professor Gallier were mixed.  Students generally appreciated his amazing sense of humor and his constant jokes and anecdotes, which they felt made the class enjoyable. However, many thought that he moved through the material too quickly, did not lecture in a clear way, and did not provide sufficient examples to tackle the homework problems.  Some reported that since he used his own notation and tree approach for proofs, it was impossible to find other sources that may have been of help.
+<br />
+<br />Overall, the course received poor ratings from students. While it was recommended to all CIS majors, it was not recommended to those who need not take it.
+<br /></p>
+      </td>
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+        <div class="comment-icon"
+          title="See Comments"
+          onclick="$('#row_hidden_0 .sec_row_hidden_1').toggle()">
+        </div>
+      
+      </td>
+      <td class="col_semester">Fall 2009</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">84/88</td>
+    
+      <td class="col_rCourseQuality">1.73</td>
+    
+      <td class="col_rInstructorQuality">2.50</td>
+    
+      <td class="col_rDifficulty">3.48</td>
+    
+      <td class="col_rAmountLearned">2.07</td>
+    
+      <td class="col_rWorkRequired">3.15</td>
+    
+      <td class="col_rReadingsValue">2.03</td>
+    
+      <td class="col_rCommAbility">1.81</td>
+    
+      <td class="col_rInstructorAccess">3.32</td>
+    
+      <td class="col_rStimulateInterest">2.37</td>
+    
+      <td class="col_rRecommendMajor">2.80</td>
+    
+      <td class="col_rRecommendNonMajor">0.90</td>
+    
+    </tr>
+  
+    <tr class="sec_row_hidden sec_row_hidden_1">
+      <td class="sec_td_hidden" colspan="50">
+        <p>This course provides an introduction to proof principles and logics, functions and relations, induction principles, combinatorics and graph theory, as well as a rigorous grounding in writing and reading mathematical proofs. It is the first course for the basic mathematical concepts and techniques needed in computer science.
+<br />
+<br />Students found the course material to be very hard and frustrating. Describing the course as “dense” and “confusing,” many students felt the class lectures were “obscure” and lacking in examples, and the homework very difficult. Some students did not see the connection with the course and the rest of the CIS curriculum.
+<br />
+<br />Students found Professor Gallier to be a “passionate,” “funny and engaging” teacher. Most students found that attendance to Professor Gallier’s office hours was required, because without him going over the homework in that time, the assignments were impossible.
+<br />
+<br />Many students cited the difficulty of the homework, along with grading concerns for it. As many students got answers from office hours or copied solutions, the median homework scores were extremely high. This course is required for CIS undergraduates, and is recommended to be taken freshman year. 
+<br /></p>
+      </td>
+    </tr>
+  
+  
+  </tbody>
+</table>
+</td>
+    </tr>
+      
+    
+  
+    
+    <tr id="row_display_1" class="row_display" onclick="toggle_course_row(1)">
+      <td class="col_icon">
+        <div class="fold-icon" title="Expand"></div>
+      </td>
+      <td class="col_instructor">
+        <a href="../instructor/6470-RAJIV-GANDHI
+<view-source:https://penncoursereview.com/instructor/6470-RAJIV-GANDHI>" onclick="toggle_course_row(1)">
+          RAJIV GANDHI
+        </a>
+      </td>
+      
+        
+        
+          
+          <td class="col_rCourseQuality">
+            <span class="cell_average">3.29</span>
+            <span class="cell_recent">3.18</span>
+          </td>
+          
+          <td class="col_rInstructorQuality">
+            <span class="cell_average">3.67</span>
+            <span class="cell_recent">3.58</span>
+          </td>
+          
+          <td class="col_rDifficulty">
+            <span class="cell_average">3.80</span>
+            <span class="cell_recent">3.83</span>
+          </td>
+          
+          <td class="col_rAmountLearned">
+            <span class="cell_average">3.52</span>
+            <span class="cell_recent">3.38</span>
+          </td>
+          
+          <td class="col_rWorkRequired">
+            <span class="cell_average">3.83</span>
+            <span class="cell_recent">3.91</span>
+          </td>
+          
+          <td class="col_rReadingsValue">
+            <span class="cell_average">2.57</span>
+            <span class="cell_recent">2.57</span>
+          </td>
+          
+          <td class="col_rCommAbility">
+            <span class="cell_average">3.58</span>
+            <span class="cell_recent">3.50</span>
+          </td>
+          
+          <td class="col_rInstructorAccess">
+            <span class="cell_average">3.55</span>
+            <span class="cell_recent">3.63</span>
+          </td>
+          
+          <td class="col_rStimulateInterest">
+            <span class="cell_average">3.47</span>
+            <span class="cell_recent">3.37</span>
+          </td>
+          
+          <td class="col_rTAQuality">
+            <span class="cell_average">2.99</span>
+            <span class="cell_recent">3.04</span>
+          </td>
+          
+          <td class="col_rRecommendMajor">
+            <span class="cell_average">3.49</span>
+            <span class="cell_recent">3.29</span>
+          </td>
+          
+          <td class="col_rRecommendNonMajor">
+            <span class="cell_average">1.85</span>
+            <span class="cell_recent">1.72</span>
+          </td>
+          
+        
+    </tr>
+    <tr class="row_hidden" id="row_hidden_1">
+      <td class="td_hidden" colspan="50">
+<table id="section-table" class="section-table">
+  <thead>
+    <tr>
+      <td class="sec_th col_icon">
+        <div title="Comments"></div>
+      </td>
+      <td class="sec_th col_semester">Semester</td>
+      <td class="sec_th col_name">Name</td>
+      <td class="sec_th col_section">Section</td>
+      <td class="sec_th col_responses">Responses</td>
+      
+      <td class="sec_th col_rCourseQuality">
+        Course Quality
+      </td>
+      
+      <td class="sec_th col_rInstructorQuality">
+        Instructor Quality
+      </td>
+      
+      <td class="sec_th col_rDifficulty">
+        Difficulty
+      </td>
+      
+      <td class="sec_th col_rAmountLearned">
+        Amount Learned
+      </td>
+      
+      <td class="sec_th col_rWorkRequired">
+        Amount of Work
+      </td>
+      
+      <td class="sec_th col_rReadingsValue">
+        Value of Readings
+      </td>
+      
+      <td class="sec_th col_rCommAbility">
+        Instructor Communication
+      </td>
+      
+      <td class="sec_th col_rInstructorAccess">
+        Instructor Accessibility
+      </td>
+      
+      <td class="sec_th col_rStimulateInterest">
+        Ability to Stimulate Interest
+      </td>
+      
+      <td class="sec_th col_rTAQuality">
+        TA Quality
+      </td>
+      
+      <td class="sec_th col_rRecommendMajor">
+        Recommend for Majors
+      </td>
+      
+      <td class="sec_th col_rRecommendNonMajor">
+        Recommend for Non-Majors
+      </td>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Fall 2015</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">168/173</td>
+    
+      <td class="col_rCourseQuality">3.18</td>
+    
+      <td class="col_rInstructorQuality">3.58</td>
+    
+      <td class="col_rDifficulty">3.83</td>
+    
+      <td class="col_rAmountLearned">3.38</td>
+    
+      <td class="col_rWorkRequired">3.91</td>
+    
+      <td class="col_rReadingsValue">2.57</td>
+    
+      <td class="col_rCommAbility">3.50</td>
+    
+      <td class="col_rInstructorAccess">3.63</td>
+    
+      <td class="col_rStimulateInterest">3.37</td>
+    
+      <td class="col_rTAQuality">3.04</td>
+    
+      <td class="col_rRecommendMajor">3.29</td>
+    
+      <td class="col_rRecommendNonMajor">1.72</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Fall 2014</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">155/189</td>
+    
+      <td class="col_rCourseQuality">3.40</td>
+    
+      <td class="col_rInstructorQuality">3.75</td>
+    
+      <td class="col_rDifficulty">3.76</td>
+    
+      <td class="col_rAmountLearned">3.66</td>
+    
+      <td class="col_rWorkRequired">3.74</td>
+    
+      <td class="col_rReadingsValue">2.56</td>
+    
+      <td class="col_rCommAbility">3.65</td>
+    
+      <td class="col_rInstructorAccess">3.46</td>
+    
+      <td class="col_rStimulateInterest">3.57</td>
+    
+      <td class="col_rTAQuality">2.93</td>
+    
+      <td class="col_rRecommendMajor">3.69</td>
+    
+      <td class="col_rRecommendNonMajor">1.98</td>
+    
+    </tr>
+  
+  
+  </tbody>
+</table>
+</td>
+    </tr>
+      
+    
+  
+    
+    <tr id="row_display_2" class="row_display" onclick="toggle_course_row(2)">
+      <td class="col_icon">
+        <div class="fold-icon" title="Expand"></div>
+      </td>
+      <td class="col_instructor">
+        <a href="../instructor/247-SAMPATH-K--KANNAN
+<view-source:https://penncoursereview.com/instructor/247-SAMPATH-K--KANNAN>" onclick="toggle_course_row(2)">
+          SAMPATH K. KANNAN
+        </a>
+      </td>
+      
+        
+        
+          
+          <td class="col_rCourseQuality">
+            <span class="cell_average">2.07</span>
+            <span class="cell_recent">2.07</span>
+          </td>
+          
+          <td class="col_rInstructorQuality">
+            <span class="cell_average">2.51</span>
+            <span class="cell_recent">2.51</span>
+          </td>
+          
+          <td class="col_rDifficulty">
+            <span class="cell_average">3.50</span>
+            <span class="cell_recent">3.50</span>
+          </td>
+          
+          <td class="col_rAmountLearned">
+            <span class="cell_average">2.50</span>
+            <span class="cell_recent">2.50</span>
+          </td>
+          
+          <td class="col_rWorkRequired">
+            <span class="cell_average">3.01</span>
+            <span class="cell_recent">3.01</span>
+          </td>
+          
+          <td class="col_rReadingsValue">
+            <span class="cell_average">2.29</span>
+            <span class="cell_recent">2.29</span>
+          </td>
+          
+          <td class="col_rCommAbility">
+            <span class="cell_average">2.34</span>
+            <span class="cell_recent">2.34</span>
+          </td>
+          
+          <td class="col_rInstructorAccess">
+            <span class="cell_average">2.64</span>
+            <span class="cell_recent">2.64</span>
+          </td>
+          
+          <td class="col_rStimulateInterest">
+            <span class="cell_average">2.08</span>
+            <span class="cell_recent">2.08</span>
+          </td>
+          
+          <td class="col_rTAQuality">
+            <span class="cell_average">2.39</span>
+            <span class="cell_recent">2.39</span>
+          </td>
+          
+          <td class="col_rRecommendMajor">
+            <span class="cell_average">2.63</span>
+            <span class="cell_recent">2.63</span>
+          </td>
+          
+          <td class="col_rRecommendNonMajor">
+            <span class="cell_average">1.03</span>
+            <span class="cell_recent">1.03</span>
+          </td>
+          
+        
+    </tr>
+    <tr class="row_hidden" id="row_hidden_2">
+      <td class="td_hidden" colspan="50">
+<table id="section-table" class="section-table">
+  <thead>
+    <tr>
+      <td class="sec_th col_icon">
+        <div title="Comments"></div>
+      </td>
+      <td class="sec_th col_semester">Semester</td>
+      <td class="sec_th col_name">Name</td>
+      <td class="sec_th col_section">Section</td>
+      <td class="sec_th col_responses">Responses</td>
+      
+      <td class="sec_th col_rCourseQuality">
+        Course Quality
+      </td>
+      
+      <td class="sec_th col_rInstructorQuality">
+        Instructor Quality
+      </td>
+      
+      <td class="sec_th col_rDifficulty">
+        Difficulty
+      </td>
+      
+      <td class="sec_th col_rAmountLearned">
+        Amount Learned
+      </td>
+      
+      <td class="sec_th col_rWorkRequired">
+        Amount of Work
+      </td>
+      
+      <td class="sec_th col_rReadingsValue">
+        Value of Readings
+      </td>
+      
+      <td class="sec_th col_rCommAbility">
+        Instructor Communication
+      </td>
+      
+      <td class="sec_th col_rInstructorAccess">
+        Instructor Accessibility
+      </td>
+      
+      <td class="sec_th col_rStimulateInterest">
+        Ability to Stimulate Interest
+      </td>
+      
+      <td class="sec_th col_rTAQuality">
+        TA Quality
+      </td>
+      
+      <td class="sec_th col_rRecommendMajor">
+        Recommend for Majors
+      </td>
+      
+      <td class="sec_th col_rRecommendNonMajor">
+        Recommend for Non-Majors
+      </td>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Fall 2013</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">125/168</td>
+    
+      <td class="col_rCourseQuality">2.07</td>
+    
+      <td class="col_rInstructorQuality">2.51</td>
+    
+      <td class="col_rDifficulty">3.50</td>
+    
+      <td class="col_rAmountLearned">2.50</td>
+    
+      <td class="col_rWorkRequired">3.01</td>
+    
+      <td class="col_rReadingsValue">2.29</td>
+    
+      <td class="col_rCommAbility">2.34</td>
+    
+      <td class="col_rInstructorAccess">2.64</td>
+    
+      <td class="col_rStimulateInterest">2.08</td>
+    
+      <td class="col_rTAQuality">2.39</td>
+    
+      <td class="col_rRecommendMajor">2.63</td>
+    
+      <td class="col_rRecommendNonMajor">1.03</td>
+    
+    </tr>
+  
+  
+  </tbody>
+</table>
+</td>
+    </tr>
+      
+    
+  
+    
+    <tr id="row_display_3" class="row_display" onclick="toggle_course_row(3)">
+      <td class="col_icon">
+        <div class="fold-icon" title="Expand"></div>
+      </td>
+      <td class="col_instructor">
+        <a href="../instructor/304-MAX-MINTZ
+<view-source:https://penncoursereview.com/instructor/304-MAX-MINTZ>" onclick="toggle_course_row(3)">
+          MAX MINTZ
+        </a>
+      </td>
+      
+        
+        
+          
+          <td class="col_rCourseQuality">
+            <span class="cell_average">2.99</span>
+            <span class="cell_recent">2.67</span>
+          </td>
+          
+          <td class="col_rInstructorQuality">
+            <span class="cell_average">3.31</span>
+            <span class="cell_recent">3.27</span>
+          </td>
+          
+          <td class="col_rDifficulty">
+            <span class="cell_average">3.32</span>
+            <span class="cell_recent">3.47</span>
+          </td>
+          
+          <td class="col_rAmountLearned">
+            <span class="cell_average">3.26</span>
+            <span class="cell_recent">2.89</span>
+          </td>
+          
+          <td class="col_rWorkRequired">
+            <span class="cell_average">3.21</span>
+            <span class="cell_recent">3.00</span>
+          </td>
+          
+          <td class="col_rReadingsValue">
+            <span class="cell_average">2.90</span>
+            <span class="cell_recent">2.87</span>
+          </td>
+          
+          <td class="col_rCommAbility">
+            <span class="cell_average">3.16</span>
+            <span class="cell_recent">2.98</span>
+          </td>
+          
+          <td class="col_rInstructorAccess">
+            <span class="cell_average">2.96</span>
+            <span class="cell_recent">2.56</span>
+          </td>
+          
+          <td class="col_rStimulateInterest">
+            <span class="cell_average">3.31</span>
+            <span class="cell_recent">3.31</span>
+          </td>
+          
+          <td class="col_rTAQuality">
+            <span class="cell_average">2.94</span>
+            <span class="cell_recent">2.70</span>
+          </td>
+          
+          <td class="col_rRecommendMajor">
+            <span class="cell_average">3.48</span>
+            <span class="cell_recent">3.17</span>
+          </td>
+          
+          <td class="col_rRecommendNonMajor">
+            <span class="cell_average">1.99</span>
+            <span class="cell_recent">1.67</span>
+          </td>
+          
+        
+    </tr>
+    <tr class="row_hidden" id="row_hidden_3">
+      <td class="td_hidden" colspan="50">
+<table id="section-table" class="section-table">
+  <thead>
+    <tr>
+      <td class="sec_th col_icon">
+        <div title="Comments"></div>
+      </td>
+      <td class="sec_th col_semester">Semester</td>
+      <td class="sec_th col_name">Name</td>
+      <td class="sec_th col_section">Section</td>
+      <td class="sec_th col_responses">Responses</td>
+      
+      <td class="sec_th col_rCourseQuality">
+        Course Quality
+      </td>
+      
+      <td class="sec_th col_rInstructorQuality">
+        Instructor Quality
+      </td>
+      
+      <td class="sec_th col_rDifficulty">
+        Difficulty
+      </td>
+      
+      <td class="sec_th col_rAmountLearned">
+        Amount Learned
+      </td>
+      
+      <td class="sec_th col_rWorkRequired">
+        Amount of Work
+      </td>
+      
+      <td class="sec_th col_rReadingsValue">
+        Value of Readings
+      </td>
+      
+      <td class="sec_th col_rCommAbility">
+        Instructor Communication
+      </td>
+      
+      <td class="sec_th col_rInstructorAccess">
+        Instructor Accessibility
+      </td>
+      
+      <td class="sec_th col_rStimulateInterest">
+        Ability to Stimulate Interest
+      </td>
+      
+      <td class="sec_th col_rTAQuality">
+        TA Quality
+      </td>
+      
+      <td class="sec_th col_rRecommendMajor">
+        Recommend for Majors
+      </td>
+      
+      <td class="sec_th col_rRecommendNonMajor">
+        Recommend for Non-Majors
+      </td>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Spring 2013</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">102/128</td>
+    
+      <td class="col_rCourseQuality">2.67</td>
+    
+      <td class="col_rInstructorQuality">3.27</td>
+    
+      <td class="col_rDifficulty">3.47</td>
+    
+      <td class="col_rAmountLearned">2.89</td>
+    
+      <td class="col_rWorkRequired">3.00</td>
+    
+      <td class="col_rReadingsValue">2.87</td>
+    
+      <td class="col_rCommAbility">2.98</td>
+    
+      <td class="col_rInstructorAccess">2.56</td>
+    
+      <td class="col_rStimulateInterest">3.31</td>
+    
+      <td class="col_rTAQuality">2.70</td>
+    
+      <td class="col_rRecommendMajor">3.17</td>
+    
+      <td class="col_rRecommendNonMajor">1.67</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Summer 2012</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">910</td>
+      <td class="col_responses">12/15</td>
+    
+      <td class="col_rCourseQuality">3.25</td>
+    
+      <td class="col_rInstructorQuality">3.67</td>
+    
+      <td class="col_rDifficulty">3.40</td>
+    
+      <td class="col_rAmountLearned">3.91</td>
+    
+      <td class="col_rWorkRequired">3.45</td>
+    
+      <td class="col_rReadingsValue">2.90</td>
+    
+      <td class="col_rCommAbility">3.64</td>
+    
+      <td class="col_rInstructorAccess">2.91</td>
+    
+      <td class="col_rStimulateInterest">3.45</td>
+    
+      <td class="col_rTAQuality">3.18</td>
+    
+      <td class="col_rRecommendMajor">3.64</td>
+    
+      <td class="col_rRecommendNonMajor">2.27</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+        <div class="comment-icon"
+          title="See Comments"
+          onclick="$('#row_hidden_3 .sec_row_hidden_2').toggle()">
+        </div>
+      
+      </td>
+      <td class="col_semester">Spring 2012</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">96/111</td>
+    
+      <td class="col_rCourseQuality">2.51</td>
+    
+      <td class="col_rInstructorQuality">2.98</td>
+    
+      <td class="col_rDifficulty">3.17</td>
+    
+      <td class="col_rAmountLearned">2.89</td>
+    
+      <td class="col_rWorkRequired">3.12</td>
+    
+      <td class="col_rReadingsValue">2.62</td>
+    
+      <td class="col_rCommAbility">2.77</td>
+    
+      <td class="col_rInstructorAccess">2.43</td>
+    
+      <td class="col_rStimulateInterest">2.97</td>
+    
+      <td class="col_rTAQuality"></td>
+    
+      <td class="col_rRecommendMajor">3.25</td>
+    
+      <td class="col_rRecommendNonMajor">1.62</td>
+    
+    </tr>
+  
+    <tr class="sec_row_hidden sec_row_hidden_2">
+      <td class="sec_td_hidden" colspan="50">
+        <p>This course provides an introduction to proof principles and logics, functions and relations, induction principles, combinatorics and graph theory, as well as a rigorous grounding in writing and reading mathematical proofs.
+<br />
+<br />Overall, the course was described as “brain-bending” and rewarding at the same time. Students considered it as “a good introduction to the mathematical basis of computer science.” Students had access to a very limited amount of material in preparing for the examinations, but found the class notes and review sessions to be particularly helpful. Some thought that not all topics covered were relevant and enlightening.
+<br />
+<br />The majority of students liked Professor Mintz but some noted that he was seldom available outside of class. Students reported that the course TAs were extremely helpful in helping students get caught up in the material, but hoped that “they could have been more attentive to online posts.”
+<br />
+<br />The course is a requirement for CIS majors and minors.
+<br /></p>
+      </td>
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+        <div class="comment-icon"
+          title="See Comments"
+          onclick="$('#row_hidden_3 .sec_row_hidden_3').toggle()">
+        </div>
+      
+      </td>
+      <td class="col_semester">Fall 2011</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">106/118</td>
+    
+      <td class="col_rCourseQuality">2.57</td>
+    
+      <td class="col_rInstructorQuality">2.96</td>
+    
+      <td class="col_rDifficulty">3.43</td>
+    
+      <td class="col_rAmountLearned">2.74</td>
+    
+      <td class="col_rWorkRequired">3.12</td>
+    
+      <td class="col_rReadingsValue">2.63</td>
+    
+      <td class="col_rCommAbility">2.69</td>
+    
+      <td class="col_rInstructorAccess">2.83</td>
+    
+      <td class="col_rStimulateInterest">2.87</td>
+    
+      <td class="col_rTAQuality"></td>
+    
+      <td class="col_rRecommendMajor">3.15</td>
+    
+      <td class="col_rRecommendNonMajor">1.34</td>
+    
+    </tr>
+  
+    <tr class="sec_row_hidden sec_row_hidden_3">
+      <td class="sec_td_hidden" colspan="50">
+        <p>This course introduces proof principles and logics, functions and relations,
+<br />induction principles, combinatorics and graph theory, as well as a rigorous grounding in
+<br />writing and reading mathematical proofs.
+<br />Students stated that they learned “interesting and thought-provoking topics” in
+<br />this course. Students stated that this was “overall, this is a math course with computer
+<br />science applicability” that teach you to “think about things in different ways.” One
+<br />student stated, “this is a great course for anyone who wants to learn about proofs and
+<br />logic.” Students complained that this “course needs a textbook” and that “the course
+<br />needs a reference written from a perspective that is not the professor's.” Students also
+<br />complained about Professor Mintz's handouts of paper copies of homework since “Handouts and
+<br />paper assignments are annoying and can often get lost” and “refusing to post assignments
+<br />online.” Multiple students stated that they desired more online access for this course.
+<br />Students wished TA’s were more accessible.
+<br />Students universally praised Professor Mintz as “brilliant’ and “very eager to teach.”
+<br />One student suggested that “this class could use a recitation with smaller groups” because
+<br />although Professor “Mintz is an excellent professor, some people are afraid to ask what would
+<br />be considered ‘dumb’ questions in a large lecture.” Professor Mintz did not post office hours on his
+<br />website, but students reported that Professor Mintz as extremely willing and flexible to meet if you
+<br />emailed him directly. Students complained about the lack of TA office hours, and the
+<br />fact that the only way to communicate with them most of the time was through email.
+<br />This class is required for computer science majors and computer science minors.
+<br />It is usually taken freshman or sophomore year for computer science majors, but older
+<br />students often take this class to gain their computer science minor. Students universally
+<br />found this course to be “extremely fast-paced” and “challenging.” Students mentioned a
+<br />high workload with “23 difficult problem sets, 3 midterm exams, and 9 quizzes.”
+<br />Students highly recommended attending review sessions for high grades on the quizzes
+<br />and the exams. Students said this course was “very difficult” but “very rewarding if you
+<br />take the time.”</p>
+      </td>
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Summer 2011</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">910</td>
+      <td class="col_responses">20/27</td>
+    
+      <td class="col_rCourseQuality">3.42</td>
+    
+      <td class="col_rInstructorQuality">3.45</td>
+    
+      <td class="col_rDifficulty">3.16</td>
+    
+      <td class="col_rAmountLearned">3.42</td>
+    
+      <td class="col_rWorkRequired">3.26</td>
+    
+      <td class="col_rReadingsValue">2.95</td>
+    
+      <td class="col_rCommAbility">3.32</td>
+    
+      <td class="col_rInstructorAccess">3.16</td>
+    
+      <td class="col_rStimulateInterest">3.53</td>
+    
+      <td class="col_rTAQuality"></td>
+    
+      <td class="col_rRecommendMajor">3.68</td>
+    
+      <td class="col_rRecommendNonMajor">2.47</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Summer 2010</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">910</td>
+      <td class="col_responses">8/11</td>
+    
+      <td class="col_rCourseQuality">3.50</td>
+    
+      <td class="col_rInstructorQuality">3.50</td>
+    
+      <td class="col_rDifficulty">3.29</td>
+    
+      <td class="col_rAmountLearned">3.71</td>
+    
+      <td class="col_rWorkRequired">3.29</td>
+    
+      <td class="col_rReadingsValue">3.43</td>
+    
+      <td class="col_rCommAbility">3.57</td>
+    
+      <td class="col_rInstructorAccess">3.86</td>
+    
+      <td class="col_rStimulateInterest">3.71</td>
+    
+      <td class="col_rTAQuality"></td>
+    
+      <td class="col_rRecommendMajor">4.00</td>
+    
+      <td class="col_rRecommendNonMajor">2.57</td>
+    
+    </tr>
+  
+  
+  </tbody>
+</table>
+</td>
+    </tr>
+      
+    
+  
+    
+    <tr id="row_display_4" class="row_display" onclick="toggle_course_row(4)">
+      <td class="col_icon">
+        <div class="fold-icon" title="Expand"></div>
+      </td>
+      <td class="col_instructor">
+        <a href="../instructor/4282-ANI-NENKOVA
+<view-source:https://penncoursereview.com/instructor/4282-ANI-NENKOVA>" onclick="toggle_course_row(4)">
+          ANI NENKOVA
+        </a>
+      </td>
+      
+        
+        
+          
+          <td class="col_rCourseQuality">
+            <span class="cell_average">1.68</span>
+            <span class="cell_recent">1.90</span>
+          </td>
+          
+          <td class="col_rInstructorQuality">
+            <span class="cell_average">1.44</span>
+            <span class="cell_recent">1.85</span>
+          </td>
+          
+          <td class="col_rDifficulty">
+            <span class="cell_average">2.81</span>
+            <span class="cell_recent">2.84</span>
+          </td>
+          
+          <td class="col_rAmountLearned">
+            <span class="cell_average">2.13</span>
+            <span class="cell_recent">2.30</span>
+          </td>
+          
+          <td class="col_rWorkRequired">
+            <span class="cell_average">2.63</span>
+            <span class="cell_recent">2.70</span>
+          </td>
+          
+          <td class="col_rReadingsValue">
+            <span class="cell_average">2.37</span>
+            <span class="cell_recent">2.50</span>
+          </td>
+          
+          <td class="col_rCommAbility">
+            <span class="cell_average">1.28</span>
+            <span class="cell_recent">1.70</span>
+          </td>
+          
+          <td class="col_rInstructorAccess">
+            <span class="cell_average">2.38</span>
+            <span class="cell_recent">2.68</span>
+          </td>
+          
+          <td class="col_rStimulateInterest">
+            <span class="cell_average">0.95</span>
+            <span class="cell_recent">1.20</span>
+          </td>
+          
+          <td class="col_rTAQuality">
+            <span class="cell_average"></span>
+            <span class="cell_recent"></span>
+          </td>
+          
+          <td class="col_rRecommendMajor">
+            <span class="cell_average">2.64</span>
+            <span class="cell_recent">2.73</span>
+          </td>
+          
+          <td class="col_rRecommendNonMajor">
+            <span class="cell_average">0.96</span>
+            <span class="cell_recent">1.21</span>
+          </td>
+          
+        
+    </tr>
+    <tr class="row_hidden" id="row_hidden_4">
+      <td class="td_hidden" colspan="50">
+<table id="section-table" class="section-table">
+  <thead>
+    <tr>
+      <td class="sec_th col_icon">
+        <div title="Comments"></div>
+      </td>
+      <td class="sec_th col_semester">Semester</td>
+      <td class="sec_th col_name">Name</td>
+      <td class="sec_th col_section">Section</td>
+      <td class="sec_th col_responses">Responses</td>
+      
+      <td class="sec_th col_rCourseQuality">
+        Course Quality
+      </td>
+      
+      <td class="sec_th col_rInstructorQuality">
+        Instructor Quality
+      </td>
+      
+      <td class="sec_th col_rDifficulty">
+        Difficulty
+      </td>
+      
+      <td class="sec_th col_rAmountLearned">
+        Amount Learned
+      </td>
+      
+      <td class="sec_th col_rWorkRequired">
+        Amount of Work
+      </td>
+      
+      <td class="sec_th col_rReadingsValue">
+        Value of Readings
+      </td>
+      
+      <td class="sec_th col_rCommAbility">
+        Instructor Communication
+      </td>
+      
+      <td class="sec_th col_rInstructorAccess">
+        Instructor Accessibility
+      </td>
+      
+      <td class="sec_th col_rStimulateInterest">
+        Ability to Stimulate Interest
+      </td>
+      
+      <td class="sec_th col_rRecommendMajor">
+        Recommend for Majors
+      </td>
+      
+      <td class="sec_th col_rRecommendNonMajor">
+        Recommend for Non-Majors
+      </td>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Spring 2011</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">59/62</td>
+    
+      <td class="col_rCourseQuality">1.90</td>
+    
+      <td class="col_rInstructorQuality">1.85</td>
+    
+      <td class="col_rDifficulty">2.84</td>
+    
+      <td class="col_rAmountLearned">2.30</td>
+    
+      <td class="col_rWorkRequired">2.70</td>
+    
+      <td class="col_rReadingsValue">2.50</td>
+    
+      <td class="col_rCommAbility">1.70</td>
+    
+      <td class="col_rInstructorAccess">2.68</td>
+    
+      <td class="col_rStimulateInterest">1.20</td>
+    
+      <td class="col_rRecommendMajor">2.73</td>
+    
+      <td class="col_rRecommendNonMajor">1.21</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+        <div class="comment-icon"
+          title="See Comments"
+          onclick="$('#row_hidden_4 .sec_row_hidden_1').toggle()">
+        </div>
+      
+      </td>
+      <td class="col_semester">Spring 2010</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">47/49</td>
+    
+      <td class="col_rCourseQuality">1.45</td>
+    
+      <td class="col_rInstructorQuality">1.02</td>
+    
+      <td class="col_rDifficulty">2.78</td>
+    
+      <td class="col_rAmountLearned">1.95</td>
+    
+      <td class="col_rWorkRequired">2.56</td>
+    
+      <td class="col_rReadingsValue">2.23</td>
+    
+      <td class="col_rCommAbility">0.86</td>
+    
+      <td class="col_rInstructorAccess">2.08</td>
+    
+      <td class="col_rStimulateInterest">0.70</td>
+    
+      <td class="col_rRecommendMajor">2.54</td>
+    
+      <td class="col_rRecommendNonMajor">0.70</td>
+    
+    </tr>
+  
+    <tr class="sec_row_hidden sec_row_hidden_1">
+      <td class="sec_td_hidden" colspan="50">
+        <p>This course, titled “Mathematical Foundations of Computer Science, introduces basic mathematical concepts utilized in computer science. Topics discussed include proof principles and logic, functions and relations, induction principles, and combinatorics and graph theory.
+<br />
+<br />Students expressed difficulty understanding the correlation between the material presented in this class and computer science, and desired that the class focus more on “concepts most relevant to computer science.”
+<br />
+<br />Overall, students were unsatisfied with Professor Nenkova’s presentation of class material, with several lamenting that her lectures were “unhelpful,” “insipid” or “condescending.” Students were especially troubled when she “called out students” to answer questions and “publicly embarrassed them” for incorrect responses. However, a few students pointed out that the TAs were pleasant and helpful.
+<br />
+<br />Students did not report unusual difficulties with completing homework, but many complained that the exam grading gave partial credit too infrequently. Students felt that this grading scheme made “memorizing the material” more important than understanding concepts.
+<br /></p>
+      </td>
+    </tr>
+  
+  
+  </tbody>
+</table>
+</td>
+    </tr>
+      
+    
+  
+    
+    <tr id="row_display_5" class="row_display" onclick="toggle_course_row(5)">
+      <td class="col_icon">
+        <div class="fold-icon" title="Expand"></div>
+      </td>
+      <td class="col_instructor">
+        <a href="../instructor/297-VAL-BREAZU-TANNEN
+<view-source:https://penncoursereview.com/instructor/297-VAL-BREAZU-TANNEN>" onclick="toggle_course_row(5)">
+          VAL BREAZU TANNEN
+        </a>
+      </td>
+      
+        
+        
+          
+          <td class="col_rCourseQuality">
+            <span class="cell_average">2.35</span>
+            <span class="cell_recent">2.24</span>
+          </td>
+          
+          <td class="col_rInstructorQuality">
+            <span class="cell_average">2.51</span>
+            <span class="cell_recent">2.34</span>
+          </td>
+          
+          <td class="col_rDifficulty">
+            <span class="cell_average">3.39</span>
+            <span class="cell_recent">3.63</span>
+          </td>
+          
+          <td class="col_rAmountLearned">
+            <span class="cell_average">2.94</span>
+            <span class="cell_recent">3.02</span>
+          </td>
+          
+          <td class="col_rWorkRequired">
+            <span class="cell_average">3.33</span>
+            <span class="cell_recent">3.61</span>
+          </td>
+          
+          <td class="col_rReadingsValue">
+            <span class="cell_average">2.39</span>
+            <span class="cell_recent">2.05</span>
+          </td>
+          
+          <td class="col_rCommAbility">
+            <span class="cell_average">2.36</span>
+            <span class="cell_recent">2.42</span>
+          </td>
+          
+          <td class="col_rInstructorAccess">
+            <span class="cell_average">2.46</span>
+            <span class="cell_recent">2.22</span>
+          </td>
+          
+          <td class="col_rStimulateInterest">
+            <span class="cell_average">2.26</span>
+            <span class="cell_recent">2.10</span>
+          </td>
+          
+          <td class="col_rTAQuality">
+            <span class="cell_average">2.52</span>
+            <span class="cell_recent">2.88</span>
+          </td>
+          
+          <td class="col_rRecommendMajor">
+            <span class="cell_average">3.10</span>
+            <span class="cell_recent">3.10</span>
+          </td>
+          
+          <td class="col_rRecommendNonMajor">
+            <span class="cell_average">1.47</span>
+            <span class="cell_recent">1.56</span>
+          </td>
+          
+        
+    </tr>
+    <tr class="row_hidden" id="row_hidden_5">
+      <td class="td_hidden" colspan="50">
+<table id="section-table" class="section-table">
+  <thead>
+    <tr>
+      <td class="sec_th col_icon">
+        <div title="Comments"></div>
+      </td>
+      <td class="sec_th col_semester">Semester</td>
+      <td class="sec_th col_name">Name</td>
+      <td class="sec_th col_section">Section</td>
+      <td class="sec_th col_responses">Responses</td>
+      
+      <td class="sec_th col_rCourseQuality">
+        Course Quality
+      </td>
+      
+      <td class="sec_th col_rInstructorQuality">
+        Instructor Quality
+      </td>
+      
+      <td class="sec_th col_rDifficulty">
+        Difficulty
+      </td>
+      
+      <td class="sec_th col_rAmountLearned">
+        Amount Learned
+      </td>
+      
+      <td class="sec_th col_rWorkRequired">
+        Amount of Work
+      </td>
+      
+      <td class="sec_th col_rReadingsValue">
+        Value of Readings
+      </td>
+      
+      <td class="sec_th col_rCommAbility">
+        Instructor Communication
+      </td>
+      
+      <td class="sec_th col_rInstructorAccess">
+        Instructor Accessibility
+      </td>
+      
+      <td class="sec_th col_rStimulateInterest">
+        Ability to Stimulate Interest
+      </td>
+      
+      <td class="sec_th col_rTAQuality">
+        TA Quality
+      </td>
+      
+      <td class="sec_th col_rRecommendMajor">
+        Recommend for Majors
+      </td>
+      
+      <td class="sec_th col_rRecommendNonMajor">
+        Recommend for Non-Majors
+      </td>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Spring 2016</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">212/229</td>
+    
+      <td class="col_rCourseQuality">2.24</td>
+    
+      <td class="col_rInstructorQuality">2.34</td>
+    
+      <td class="col_rDifficulty">3.63</td>
+    
+      <td class="col_rAmountLearned">3.02</td>
+    
+      <td class="col_rWorkRequired">3.61</td>
+    
+      <td class="col_rReadingsValue">2.05</td>
+    
+      <td class="col_rCommAbility">2.42</td>
+    
+      <td class="col_rInstructorAccess">2.22</td>
+    
+      <td class="col_rStimulateInterest">2.10</td>
+    
+      <td class="col_rTAQuality">2.88</td>
+    
+      <td class="col_rRecommendMajor">3.10</td>
+    
+      <td class="col_rRecommendNonMajor">1.56</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Spring 2015</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">131/141</td>
+    
+      <td class="col_rCourseQuality">2.41</td>
+    
+      <td class="col_rInstructorQuality">2.59</td>
+    
+      <td class="col_rDifficulty">3.38</td>
+    
+      <td class="col_rAmountLearned">2.93</td>
+    
+      <td class="col_rWorkRequired">3.41</td>
+    
+      <td class="col_rReadingsValue">2.41</td>
+    
+      <td class="col_rCommAbility">2.40</td>
+    
+      <td class="col_rInstructorAccess">2.68</td>
+    
+      <td class="col_rStimulateInterest">2.31</td>
+    
+      <td class="col_rTAQuality">2.82</td>
+    
+      <td class="col_rRecommendMajor">3.04</td>
+    
+      <td class="col_rRecommendNonMajor">1.54</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Spring 2014</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">123/138</td>
+    
+      <td class="col_rCourseQuality">2.36</td>
+    
+      <td class="col_rInstructorQuality">2.48</td>
+    
+      <td class="col_rDifficulty">3.15</td>
+    
+      <td class="col_rAmountLearned">2.84</td>
+    
+      <td class="col_rWorkRequired">3.15</td>
+    
+      <td class="col_rReadingsValue">2.54</td>
+    
+      <td class="col_rCommAbility">2.37</td>
+    
+      <td class="col_rInstructorAccess">2.56</td>
+    
+      <td class="col_rStimulateInterest">2.28</td>
+    
+      <td class="col_rTAQuality">2.73</td>
+    
+      <td class="col_rRecommendMajor">3.09</td>
+    
+      <td class="col_rRecommendNonMajor">1.44</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Fall 2012</td>
+      <td class="col_name">MATH FOUND COMP SCI</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">99/120</td>
+    
+      <td class="col_rCourseQuality">2.40</td>
+    
+      <td class="col_rInstructorQuality">2.61</td>
+    
+      <td class="col_rDifficulty">3.41</td>
+    
+      <td class="col_rAmountLearned">2.96</td>
+    
+      <td class="col_rWorkRequired">3.13</td>
+    
+      <td class="col_rReadingsValue">2.54</td>
+    
+      <td class="col_rCommAbility">2.25</td>
+    
+      <td class="col_rInstructorAccess">2.38</td>
+    
+      <td class="col_rStimulateInterest">2.35</td>
+    
+      <td class="col_rTAQuality">1.64</td>
+    
+      <td class="col_rRecommendMajor">3.18</td>
+    
+      <td class="col_rRecommendNonMajor">1.35</td>
+    
+    </tr>
+  
+  
+  </tbody>
+</table>
+</td>
+    </tr>
+      
+    
+  
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+  <div class="clear"></div>
+
+      </div>
+    </div>
+    
+
+    <div id="footer">
+      <div id="footer-inner" class="container_12">
+        <a href="../about <view-source:https://penncoursereview.com/about>">About</a>
+<span>|</span>
+<a href="../faq <view-source:https://penncoursereview.com/faq>">FAQs</a>
+<span>|</span>
+<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFNZYW92cFM1YnpKUzlLcXRDZVQ4VGc6MQ#gid=0faq
+<view-source:https://docs.google.com/spreadsheet/viewform?formkey=dFNZYW92cFM1YnpKUzlLcXRDZVQ4VGc6MQ#gid=0faq>">Feedback</a>
+<span>|</span>
+<a href="https://weblogin.pennkey.upenn.edu/logout
+<view-source:https://weblogin.pennkey.upenn.edu/logout>">Logout</a>
+
+        <p id="copyright">
+          <!--[if IE 8]>
+          <span style="color:#CC0000;">Best viewed in Chrome or Firefox. </span>
+          <![endif]-->
+          Copyright &copy; 2016
+          <a href="http://pennlabs.org <view-source:http://pennlabs.org/>"><strong>Penn Labs</strong></a>
+          |
+          Hosted by
+          <a href="http://stwing.upenn.edu/ <view-source:http://stwing.upenn.edu/>"><strong>STWing</strong></a>
+          <!--[if IE 8>]
+          <span style="color:#CC0000;">Best viewed in Chrome or Firefox. </span>
+          <![endif]-->
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+  
+<div id="choose-cols">
+  <div class="container_12">
+    <div id="choose-cols-inner">
+      <div class="prefix_3 grid_6 suffix_3">
+        <div id="choose-cols-content" class="shadow disable-selection">
+        
+          <h1>Choose Columns to Display</h1>
+          
+          <div id="select-all">
+            <p>
+              <input type="checkbox" id="checkbox_all" name="all" value="all"
+                onchange="toggle_choose_cols_all()" />
+              <label for="checkbox_all">Select/Deselect All</label>
+            </p>
+          </div>
+          
+          <div class="col">            
+            
+            <p>
+              <input type="checkbox" id="checkbox_rCourseQuality" name="rCourseQuality" value="rCourseQuality" />
+              <label for="checkbox_rCourseQuality">Course Quality</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rInstructorQuality" name="rInstructorQuality" value="rInstructorQuality" />
+              <label for="checkbox_rInstructorQuality">Instructor Quality</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rDifficulty" name="rDifficulty" value="rDifficulty" />
+              <label for="checkbox_rDifficulty">Difficulty</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rAmountLearned" name="rAmountLearned" value="rAmountLearned" />
+              <label for="checkbox_rAmountLearned">Amount Learned</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rWorkRequired" name="rWorkRequired" value="rWorkRequired" />
+              <label for="checkbox_rWorkRequired">Amount of Work</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rReadingsValue" name="rReadingsValue" value="rReadingsValue" />
+              <label for="checkbox_rReadingsValue">Value of Readings</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rCommAbility" name="rCommAbility" value="rCommAbility" />
+              <label for="checkbox_rCommAbility">Instructor Communication</label>
+            </p>
+            
+          </div>
+                    
+          <div class="col">
+            
+            <p>
+              <input type="checkbox" id="checkbox_rInstructorAccess" name="rInstructorAccess" value="rInstructorAccess" />
+              <label for="checkbox_rInstructorAccess">Instructor Accessibility</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rStimulateInterest" name="rStimulateInterest" value="rStimulateInterest" />
+              <label for="checkbox_rStimulateInterest">Ability to Stimulate Interest</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rTAQuality" name="rTAQuality" value="rTAQuality" />
+              <label for="checkbox_rTAQuality">TA Quality</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rRecommendMajor" name="rRecommendMajor" value="rRecommendMajor" />
+              <label for="checkbox_rRecommendMajor">Recommend for Majors</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rRecommendNonMajor" name="rRecommendNonMajor" value="rRecommendNonMajor" />
+              <label for="checkbox_rRecommendNonMajor">Recommend for Non-Majors</label>
+            </p>
+              
+          </div>
+          
+          <div style="clear:both"></div>
+          <div id="buttons">
+            <input type="button" value="Submit" onclick="submit_choose_cols()" />
+            <input type="button" value="Cancel" onclick="cancel_choose_cols()" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="tutorial_overlay">
+  <div class="container_12">
+    <div id="tut-close-button" class="tut-elem"
+      onclick="$('#tutorial_overlay').hide()">      
+    </div>
+    
+    <div id="tut-sort" class="tut-elem">
+      <p>Click on column headings to sort by that criteria.</p>
+    </div>
+    
+    <div id="tut-viewmode" class="tut-elem">
+      <div class="inner">
+        <p>Click here to choose how the scores are displayed. </p>
+        <p>"Average" shows the aggregate score over multiple sections of the class taught.</p>
+        <p>"Recent" shows the score from the most recent section of the class. </p>
+      </div>
+    </div>
+    
+    <div id="tut-ratings" class="tut-elem">
+      <div class="inner">
+        <p>The numerical ratings translate as follows:</p>
+        <table>
+          <tr>
+            <td>4.0</td>
+            <td>Excellent</td>
+          </tr>
+          <tr>
+            <td>3.0</td>
+            <td>Very Good</td>
+          </tr>
+          <tr>
+            <td>2.0</td>
+            <td>Good</td>
+          </tr>
+          <tr>
+            <td>1.0</td>
+            <td>Poor</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+        
+    <div id="tut-choosecols" class="tut-elem">
+      <div class="inner">
+        <p>Click here to choose which rating criteria appear in the table.</p>
+        <p>Further information about the class, such as "Amount of Work" or "Instructor Communication", can be added to display in the table using this option. </p>
+      </div>
+    </div>
+    
+    <div id="tut-row" class="tut-elem">
+      <div class="inner">
+        <p>Click the "+" to see individual semesters and available written reviews.</p>
+        <p>Click on the link to go to the respective page.</p>
+      </div>
+    </div>
+  
+    
+    
+  </div>
+  
+  
+</div>
+
+
+
+  <div id="hidden">
+    
+    
+  </div>
+<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/DK7y9di1OfqvyeKq0bB94g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+
+<!-- A tab to launch the Classic Widget -->
+<script>
+UserVoice = window.UserVoice || [];
+UserVoice.push(['showTab', 'classic_widget', {
+  mode: 'full',
+  primary_color: '#cc6d00',
+  link_color: '#007dbf',
+  default_mode: 'feedback',
+  forum_id: 177712,
+  tab_label: 'Feedback',
+  tab_color: '#cc6d00',
+  tab_position: 'bottom-right',
+  tab_inverted: false
+}]);
+</script>
+</body>
+</html>
+

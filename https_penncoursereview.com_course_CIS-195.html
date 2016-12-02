@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+  <meta name="description" content="Penn Course Review is a tool for students at the University of
+Pennsylvania to search for the best professor and classes on campus. ">
+  <link href="apple-touch-icon-57x57.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-57x57.png>" sizes="57x57" rel="../media/front-end/image/apple-touch-icon-57x57-precomposed.png">
+  <link href="apple-touch-icon-72x72.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-72x72.png>" sizes="72x72" rel="../media/front-end/image/apple-touch-icon-72x72-precomposed.png">
+  <link href="apple-touch-icon-114x114.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-114x114.png>" sizes="114x114" rel="../media/front-end/image/apple-touch-icon-114x114-precomposed.png">
+  <link href="apple-touch-icon-144x144.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-144x144.png>" sizes="144x144" rel="../media/front-end/image/apple-touch-icon-144x144-precomposed.png">
+  <link href="apple-touch-icon-76x76.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-76x76.png>" sizes="76x76" rel="../media/front-end/image/apple-touch-icon-76x76-precomposed.png">
+  <link href="apple-touch-icon-60x60.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-60x60.png>" sizes="60x60" rel="../media/front-end/image/apple-touch-icon-60x60-precomposed.png">
+  <link href="apple-touch-icon-152x152.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-152x152.png>" sizes="152x152" rel="../media/front-end/image/apple-touch-icon-152x152-precomposed.png">
+  <link href="apple-touch-icon-120x120.png
+<view-source:https://penncoursereview.com/course/apple-touch-icon-120x120.png>" sizes="120x120" rel="../media/front-end/image/apple-touch-icon-120x120-precomposed.png">
+
+  <link rel="shortcut icon" href="../media/front-end/image/favicon.ico
+<view-source:https://penncoursereview.com/media/front-end/image/favicon.ico>">
+  <link type="text/css" href="../media/front-end/css/960_12_col.css
+<view-source:https://penncoursereview.com/media/front-end/css/960_12_col.css>" rel="stylesheet" />
+  <link type="text/css" href="../media/front-end/css/reset.css
+<view-source:https://penncoursereview.com/media/front-end/css/reset.css>" rel="stylesheet" />
+  <link type="text/css" href="../media/front-end/css/flick/jquery-ui-1.8.16.custom.css
+<view-source:https://penncoursereview.com/media/front-end/css/flick/jquery-ui-1.8.16.custom.css>" rel="stylesheet" />
+
+  <link type="text/css" href="../media/front-end/css/base.css
+<view-source:https://penncoursereview.com/media/front-end/css/base.css>" rel="stylesheet" />
+  <link type="text/css" href="../media/front-end/css/searchbox.css
+<view-source:https://penncoursereview.com/media/front-end/css/searchbox.css>" rel="stylesheet" />
+
+  <link href='//fonts.googleapis.com/css?family=Lato:100,300,400
+<view-source:https://fonts.googleapis.com/css?family=Lato:100,300,400>' rel='stylesheet' type='text/css'>
+
+  
+  <link type="text/css" href="../media/front-end/css/tutorial_overlay.css
+<view-source:https://penncoursereview.com/media/front-end/css/tutorial_overlay.css>" rel="stylesheet" />
+
+
+  <title>
+  Penn Course Review - CIS-195
+</title>
+
+  <script type="text/javascript" src="../media/front-end/js/jquery-1.6.2.min.js
+<view-source:https://penncoursereview.com/media/front-end/js/jquery-1.6.2.min.js>"></script>
+  <script type="text/javascript" src="../media/front-end/js/jquery-ui-1.8.16.custom.min.js
+<view-source:https://penncoursereview.com/media/front-end/js/jquery-ui-1.8.16.custom.min.js>"></script>
+  <script type="text/javascript" src="../media/front-end/js/jquery.cookie.js
+<view-source:https://penncoursereview.com/media/front-end/js/jquery.cookie.js>"></script>
+
+  <script type="text/javascript" src="../media/front-end/js/searchbox.js
+<view-source:https://penncoursereview.com/media/front-end/js/searchbox.js>"></script>
+
+  
+  <![if ! IE 7]>
+  <script src="../media/front-end/js/jquery.tablesorter.min.js
+<view-source:https://penncoursereview.com/media/front-end/js/jquery.tablesorter.min.js>"></script>
+  <![endif]><!--[if IE 7]>
+  <script src="../media/front-end/js/jquery.tablesorter.ie8fix.min.js"></script>
+  <![endif]-->
+  <script src="../media/front-end/js/item_base.js
+<view-source:https://penncoursereview.com/media/front-end/js/item_base.js>"></script>
+
+
+  
+
+  <!--[if IE 8]>
+  <style>
+  #course-table .col_icon {
+    width:11px;
+  }
+  </style>
+  <![endif]-->
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">var mpq=[];mpq.push(["init","9aa52fc2877144ac5d5d92002694f984"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
+  </script>
+  <!-- end Mixpanel -->
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21029575-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</head>
+
+<body>
+  <div class="background"></div>
+  <div id="wrapper">
+    
+      <div id="header"><div id="header-bg">
+        <div class="container_12">
+          
+            <a href="../ <view-source:https://penncoursereview.com/>"><div id="title" class="header-item">
+              Penn Course Review
+            </div></a>
+            <div id="linkbar" class="header-item">
+              <a href="../about <view-source:https://penncoursereview.com/about>">About</a>
+<span>|</span>
+<a href="../faq <view-source:https://penncoursereview.com/faq>">FAQs</a>
+<span>|</span>
+<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFNZYW92cFM1YnpKUzlLcXRDZVQ4VGc6MQ#gid=0faq
+<view-source:https://docs.google.com/spreadsheet/viewform?formkey=dFNZYW92cFM1YnpKUzlLcXRDZVQ4VGc6MQ#gid=0faq>">Feedback</a>
+<span>|</span>
+<a href="https://weblogin.pennkey.upenn.edu/logout
+<view-source:https://weblogin.pennkey.upenn.edu/logout>">Logout</a>
+
+            </div>
+            <div id="searchbar" class="header-item">
+              <input id="searchbox" type="text" value=""/>
+<input id="search-submit" type="submit" value=""/>
+<div id="loading-container" class="ui-menu ui-autocomplete ui-widget">
+</div>
+<div id="results_top"></div>
+            </div>
+            <div class="clear"></div>
+          
+        </div>
+      </div></div>
+    
+
+    
+    <div id="banner"><div id="banner-bg">
+      <div id="banner-inner" class="container_12">
+        
+  <div id="banner-info">
+    
+<p class="title">CIS 195
+<span class="crosslist">
+  
+</span>
+<p class="subtitle">Iphone App Development</p>
+<p class="desc"></p>
+
+  </div>
+  
+    
+
+<div id="banner-score">
+    <div class="scoreboxrow">
+      <div class="scoredesc">
+        <p class="title">Average</p>
+        <p class="subtitle">9 Sections</p>
+      </div>
+
+      <div class="scorebox">
+        <p class="num">2.5</p>
+        <p class="desc">Course</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+      <div class="scorebox">
+        <p class="num">2.6</p>
+        <p class="desc">Instructor</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+      <div class="scorebox">
+        <p class="num">2.3</p>
+        <p class="desc">Difficulty</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+    </div>
+    <div class="scoreboxrow">
+      
+      <div class="scoredesc">
+        <p class="title">Most Recent</p>
+        <p class="subtitle">Spring 2016</p>
+      </div>
+
+      <div class="scorebox">
+        <p class="num">2.8</p>
+        <p class="desc">Course</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+      <div class="scorebox">
+        <p class="num">3.1</p>
+        <p class="desc">Instructor</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+
+      <div class="scorebox">
+        <p class="num">1.9</p>
+        <p class="desc">Difficulty</p>
+      </div>
+      <div class="scorebox-shadow"></div>
+      
+    </div>
+</div>
+
+
+  
+  <div class="clear"></div>
+
+      </div>
+    </div></div>
+    
+
+    
+    <div id="content">
+      <div class="container_12">
+        
+  
+
+  <div id="content-settings" class="grid_12">
+    <div id="settings-viewmode" class="grid_4 alpha">
+      <span class="label">View:&nbsp;</span>
+      <span id="view_average" class="button selected" onclick="set_viewmode(0)">Average</span>
+      <span id="view_recent" class="button" onclick="set_viewmode(1)">Most Recent</span>
+    </div>
+    <div id="settings-other" class="grid_8 omega">
+      <span class="button" onclick="$('#tutorial_overlay').show()">&nbsp;<strong>?</strong>&nbsp;</span>
+      <span class="button" onclick="toggle_choose_cols()">Choose Columns</span>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div id="content-section" class="grid_12">
+    <div id="table-div">
+      <table id="course-table" count="0">
+        <thead>
+          <tr>
+            <th scope="col" class="col_icon">
+              
+              <div class="fold-icon" onclick="toggle_course_row_all()" title="Expand All"></div>
+              
+            </th>
+            
+<th scope="col" class="col_instructor">
+  <div class="sort-icon"></div>
+  <span class="th-text">Instructor</span>
+</th>
+
+            
+            
+            <th scope="col" class="col_rCourseQuality">
+              <div class="sort-icon"></div>
+              <span class="th-text">Course Quality</span>
+            </th>
+            
+            <th scope="col" class="col_rInstructorQuality">
+              <div class="sort-icon"></div>
+              <span class="th-text">Instructor Quality</span>
+            </th>
+            
+            <th scope="col" class="col_rDifficulty">
+              <div class="sort-icon"></div>
+              <span class="th-text">Difficulty</span>
+            </th>
+            
+            <th scope="col" class="col_rAmountLearned">
+              <div class="sort-icon"></div>
+              <span class="th-text">Amount Learned</span>
+            </th>
+            
+            <th scope="col" class="col_rWorkRequired">
+              <div class="sort-icon"></div>
+              <span class="th-text">Amount of Work</span>
+            </th>
+            
+            <th scope="col" class="col_rReadingsValue">
+              <div class="sort-icon"></div>
+              <span class="th-text">Value of Readings</span>
+            </th>
+            
+            <th scope="col" class="col_rCommAbility">
+              <div class="sort-icon"></div>
+              <span class="th-text">Instructor Communication</span>
+            </th>
+            
+            <th scope="col" class="col_rInstructorAccess">
+              <div class="sort-icon"></div>
+              <span class="th-text">Instructor Accessibility</span>
+            </th>
+            
+            <th scope="col" class="col_rStimulateInterest">
+              <div class="sort-icon"></div>
+              <span class="th-text">Ability to Stimulate Interest</span>
+            </th>
+            
+            <th scope="col" class="col_rTAQuality">
+              <div class="sort-icon"></div>
+              <span class="th-text">TA Quality</span>
+            </th>
+            
+            <th scope="col" class="col_rRecommendMajor">
+              <div class="sort-icon"></div>
+              <span class="th-text">Recommend for Majors</span>
+            </th>
+            
+            <th scope="col" class="col_rRecommendNonMajor">
+              <div class="sort-icon"></div>
+              <span class="th-text">Recommend for Non-Majors</span>
+            </th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+  
+  
+    
+    <tr id="row_display_0" class="row_display" onclick="toggle_course_row(0)">
+      <td class="col_icon">
+        <div class="fold-icon" title="Expand"></div>
+      </td>
+      <td class="col_instructor">
+        <a href="../instructor/3918-BOON-THAU-LOO
+<view-source:https://penncoursereview.com/instructor/3918-BOON-THAU-LOO>" onclick="toggle_course_row(0)">
+          BOON THAU LOO
+        </a>
+      </td>
+      
+        
+        
+          
+          <td class="col_rCourseQuality">
+            <span class="cell_average">2.77</span>
+            <span class="cell_recent">2.73</span>
+          </td>
+          
+          <td class="col_rInstructorQuality">
+            <span class="cell_average">2.63</span>
+            <span class="cell_recent">2.62</span>
+          </td>
+          
+          <td class="col_rDifficulty">
+            <span class="cell_average">2.24</span>
+            <span class="cell_recent">1.75</span>
+          </td>
+          
+          <td class="col_rAmountLearned">
+            <span class="cell_average">3.07</span>
+            <span class="cell_recent">3.00</span>
+          </td>
+          
+          <td class="col_rWorkRequired">
+            <span class="cell_average">2.60</span>
+            <span class="cell_recent">2.13</span>
+          </td>
+          
+          <td class="col_rReadingsValue">
+            <span class="cell_average">2.49</span>
+            <span class="cell_recent">2.07</span>
+          </td>
+          
+          <td class="col_rCommAbility">
+            <span class="cell_average">2.50</span>
+            <span class="cell_recent">2.56</span>
+          </td>
+          
+          <td class="col_rInstructorAccess">
+            <span class="cell_average">2.61</span>
+            <span class="cell_recent">2.63</span>
+          </td>
+          
+          <td class="col_rStimulateInterest">
+            <span class="cell_average">2.34</span>
+            <span class="cell_recent">2.38</span>
+          </td>
+          
+          <td class="col_rTAQuality">
+            <span class="cell_average">2.50</span>
+            <span class="cell_recent">2.47</span>
+          </td>
+          
+          <td class="col_rRecommendMajor">
+            <span class="cell_average">3.17</span>
+            <span class="cell_recent">3.38</span>
+          </td>
+          
+          <td class="col_rRecommendNonMajor">
+            <span class="cell_average">2.07</span>
+            <span class="cell_recent">2.25</span>
+          </td>
+          
+        
+    </tr>
+    <tr class="row_hidden" id="row_hidden_0">
+      <td class="td_hidden" colspan="50">
+<table id="section-table" class="section-table">
+  <thead>
+    <tr>
+      <td class="sec_th col_icon">
+        <div title="Comments"></div>
+      </td>
+      <td class="sec_th col_semester">Semester</td>
+      <td class="sec_th col_name">Name</td>
+      <td class="sec_th col_section">Section</td>
+      <td class="sec_th col_responses">Responses</td>
+      
+      <td class="sec_th col_rCourseQuality">
+        Course Quality
+      </td>
+      
+      <td class="sec_th col_rInstructorQuality">
+        Instructor Quality
+      </td>
+      
+      <td class="sec_th col_rDifficulty">
+        Difficulty
+      </td>
+      
+      <td class="sec_th col_rAmountLearned">
+        Amount Learned
+      </td>
+      
+      <td class="sec_th col_rWorkRequired">
+        Amount of Work
+      </td>
+      
+      <td class="sec_th col_rReadingsValue">
+        Value of Readings
+      </td>
+      
+      <td class="sec_th col_rCommAbility">
+        Instructor Communication
+      </td>
+      
+      <td class="sec_th col_rInstructorAccess">
+        Instructor Accessibility
+      </td>
+      
+      <td class="sec_th col_rStimulateInterest">
+        Ability to Stimulate Interest
+      </td>
+      
+      <td class="sec_th col_rTAQuality">
+        TA Quality
+      </td>
+      
+      <td class="sec_th col_rRecommendMajor">
+        Recommend for Majors
+      </td>
+      
+      <td class="sec_th col_rRecommendNonMajor">
+        Recommend for Non-Majors
+      </td>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Fall 2013</td>
+      <td class="col_name">IPHONE APP DEVELOPMENT</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">24/30</td>
+    
+      <td class="col_rCourseQuality">2.73</td>
+    
+      <td class="col_rInstructorQuality">2.62</td>
+    
+      <td class="col_rDifficulty">1.75</td>
+    
+      <td class="col_rAmountLearned">3.00</td>
+    
+      <td class="col_rWorkRequired">2.13</td>
+    
+      <td class="col_rReadingsValue">2.07</td>
+    
+      <td class="col_rCommAbility">2.56</td>
+    
+      <td class="col_rInstructorAccess">2.63</td>
+    
+      <td class="col_rStimulateInterest">2.38</td>
+    
+      <td class="col_rTAQuality">2.47</td>
+    
+      <td class="col_rRecommendMajor">3.38</td>
+    
+      <td class="col_rRecommendNonMajor">2.25</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Spring 2013</td>
+      <td class="col_name">IPHONE APP DEVELOPMENT</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">17/19</td>
+    
+      <td class="col_rCourseQuality">2.67</td>
+    
+      <td class="col_rInstructorQuality">2.67</td>
+    
+      <td class="col_rDifficulty">2.67</td>
+    
+      <td class="col_rAmountLearned">3.20</td>
+    
+      <td class="col_rWorkRequired">2.80</td>
+    
+      <td class="col_rReadingsValue">2.70</td>
+    
+      <td class="col_rCommAbility">2.50</td>
+    
+      <td class="col_rInstructorAccess">2.90</td>
+    
+      <td class="col_rStimulateInterest">2.50</td>
+    
+      <td class="col_rTAQuality">2.60</td>
+    
+      <td class="col_rRecommendMajor">3.00</td>
+    
+      <td class="col_rRecommendNonMajor">2.10</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Fall 2012</td>
+      <td class="col_name">IPHONE APP DEVELOPMENT</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">11/12</td>
+    
+      <td class="col_rCourseQuality">2.90</td>
+    
+      <td class="col_rInstructorQuality">2.60</td>
+    
+      <td class="col_rDifficulty">2.29</td>
+    
+      <td class="col_rAmountLearned">3.00</td>
+    
+      <td class="col_rWorkRequired">2.86</td>
+    
+      <td class="col_rReadingsValue">2.71</td>
+    
+      <td class="col_rCommAbility">2.43</td>
+    
+      <td class="col_rInstructorAccess">2.29</td>
+    
+      <td class="col_rStimulateInterest">2.14</td>
+    
+      <td class="col_rTAQuality">2.43</td>
+    
+      <td class="col_rRecommendMajor">3.14</td>
+    
+      <td class="col_rRecommendNonMajor">1.86</td>
+    
+    </tr>
+  
+  
+  </tbody>
+</table>
+</td>
+    </tr>
+      
+    
+  
+    
+    <tr id="row_display_1" class="row_display" onclick="toggle_course_row(1)">
+      <td class="col_icon">
+        <div class="fold-icon" title="Expand"></div>
+      </td>
+      <td class="col_instructor">
+        <a href="../instructor/6855-SWAPNEEL-SHETH
+<view-source:https://penncoursereview.com/instructor/6855-SWAPNEEL-SHETH>" onclick="toggle_course_row(1)">
+          SWAPNEEL SHETH
+        </a>
+      </td>
+      
+        
+        
+          
+          <td class="col_rCourseQuality">
+            <span class="cell_average">2.51</span>
+            <span class="cell_recent">2.79</span>
+          </td>
+          
+          <td class="col_rInstructorQuality">
+            <span class="cell_average">2.62</span>
+            <span class="cell_recent">3.08</span>
+          </td>
+          
+          <td class="col_rDifficulty">
+            <span class="cell_average">2.31</span>
+            <span class="cell_recent">1.86</span>
+          </td>
+          
+          <td class="col_rAmountLearned">
+            <span class="cell_average">2.62</span>
+            <span class="cell_recent">2.00</span>
+          </td>
+          
+          <td class="col_rWorkRequired">
+            <span class="cell_average">2.39</span>
+            <span class="cell_recent">1.86</span>
+          </td>
+          
+          <td class="col_rReadingsValue">
+            <span class="cell_average">2.43</span>
+            <span class="cell_recent">2.33</span>
+          </td>
+          
+          <td class="col_rCommAbility">
+            <span class="cell_average">2.65</span>
+            <span class="cell_recent">2.57</span>
+          </td>
+          
+          <td class="col_rInstructorAccess">
+            <span class="cell_average">2.55</span>
+            <span class="cell_recent">2.29</span>
+          </td>
+          
+          <td class="col_rStimulateInterest">
+            <span class="cell_average">2.66</span>
+            <span class="cell_recent">3.00</span>
+          </td>
+          
+          <td class="col_rTAQuality">
+            <span class="cell_average">2.72</span>
+            <span class="cell_recent">2.71</span>
+          </td>
+          
+          <td class="col_rRecommendMajor">
+            <span class="cell_average">2.86</span>
+            <span class="cell_recent">2.86</span>
+          </td>
+          
+          <td class="col_rRecommendNonMajor">
+            <span class="cell_average">2.48</span>
+            <span class="cell_recent">2.43</span>
+          </td>
+          
+        
+    </tr>
+    <tr class="row_hidden" id="row_hidden_1">
+      <td class="td_hidden" colspan="50">
+<table id="section-table" class="section-table">
+  <thead>
+    <tr>
+      <td class="sec_th col_icon">
+        <div title="Comments"></div>
+      </td>
+      <td class="sec_th col_semester">Semester</td>
+      <td class="sec_th col_name">Name</td>
+      <td class="sec_th col_section">Section</td>
+      <td class="sec_th col_responses">Responses</td>
+      
+      <td class="sec_th col_rCourseQuality">
+        Course Quality
+      </td>
+      
+      <td class="sec_th col_rInstructorQuality">
+        Instructor Quality
+      </td>
+      
+      <td class="sec_th col_rDifficulty">
+        Difficulty
+      </td>
+      
+      <td class="sec_th col_rAmountLearned">
+        Amount Learned
+      </td>
+      
+      <td class="sec_th col_rWorkRequired">
+        Amount of Work
+      </td>
+      
+      <td class="sec_th col_rReadingsValue">
+        Value of Readings
+      </td>
+      
+      <td class="sec_th col_rCommAbility">
+        Instructor Communication
+      </td>
+      
+      <td class="sec_th col_rInstructorAccess">
+        Instructor Accessibility
+      </td>
+      
+      <td class="sec_th col_rStimulateInterest">
+        Ability to Stimulate Interest
+      </td>
+      
+      <td class="sec_th col_rTAQuality">
+        TA Quality
+      </td>
+      
+      <td class="sec_th col_rRecommendMajor">
+        Recommend for Majors
+      </td>
+      
+      <td class="sec_th col_rRecommendNonMajor">
+        Recommend for Non-Majors
+      </td>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Spring 2016</td>
+      <td class="col_name">IPHONE APP DEVELOPMENT</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">19/21</td>
+    
+      <td class="col_rCourseQuality">2.79</td>
+    
+      <td class="col_rInstructorQuality">3.08</td>
+    
+      <td class="col_rDifficulty">1.86</td>
+    
+      <td class="col_rAmountLearned">2.00</td>
+    
+      <td class="col_rWorkRequired">1.86</td>
+    
+      <td class="col_rReadingsValue">2.33</td>
+    
+      <td class="col_rCommAbility">2.57</td>
+    
+      <td class="col_rInstructorAccess">2.29</td>
+    
+      <td class="col_rStimulateInterest">3.00</td>
+    
+      <td class="col_rTAQuality">2.71</td>
+    
+      <td class="col_rRecommendMajor">2.86</td>
+    
+      <td class="col_rRecommendNonMajor">2.43</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Fall 2015</td>
+      <td class="col_name">IPHONE APP DEVELOPMENT</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">19/21</td>
+    
+      <td class="col_rCourseQuality">3.26</td>
+    
+      <td class="col_rInstructorQuality">3.24</td>
+    
+      <td class="col_rDifficulty">2.22</td>
+    
+      <td class="col_rAmountLearned">3.22</td>
+    
+      <td class="col_rWorkRequired">2.22</td>
+    
+      <td class="col_rReadingsValue">3.22</td>
+    
+      <td class="col_rCommAbility">3.33</td>
+    
+      <td class="col_rInstructorAccess">3.00</td>
+    
+      <td class="col_rStimulateInterest">3.33</td>
+    
+      <td class="col_rTAQuality">3.33</td>
+    
+      <td class="col_rRecommendMajor">3.44</td>
+    
+      <td class="col_rRecommendNonMajor">3.22</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Spring 2015</td>
+      <td class="col_name">IPHONE APP DEVELOPMENT</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">17/21</td>
+    
+      <td class="col_rCourseQuality">2.18</td>
+    
+      <td class="col_rInstructorQuality">2.00</td>
+    
+      <td class="col_rDifficulty">2.80</td>
+    
+      <td class="col_rAmountLearned">2.80</td>
+    
+      <td class="col_rWorkRequired">2.60</td>
+    
+      <td class="col_rReadingsValue">3.00</td>
+    
+      <td class="col_rCommAbility">2.80</td>
+    
+      <td class="col_rInstructorAccess">2.60</td>
+    
+      <td class="col_rStimulateInterest">2.80</td>
+    
+      <td class="col_rTAQuality">3.40</td>
+    
+      <td class="col_rRecommendMajor">3.00</td>
+    
+      <td class="col_rRecommendNonMajor">2.60</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Fall 2014</td>
+      <td class="col_name">IPHONE APP DEVELOPMENT</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">12/18</td>
+    
+      <td class="col_rCourseQuality">2.13</td>
+    
+      <td class="col_rInstructorQuality">2.33</td>
+    
+      <td class="col_rDifficulty">2.29</td>
+    
+      <td class="col_rAmountLearned">2.83</td>
+    
+      <td class="col_rWorkRequired">2.83</td>
+    
+      <td class="col_rReadingsValue">1.83</td>
+    
+      <td class="col_rCommAbility">2.00</td>
+    
+      <td class="col_rInstructorAccess">2.17</td>
+    
+      <td class="col_rStimulateInterest">2.00</td>
+    
+      <td class="col_rTAQuality">2.14</td>
+    
+      <td class="col_rRecommendMajor">2.83</td>
+    
+      <td class="col_rRecommendNonMajor">2.17</td>
+    
+    </tr>
+  
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Spring 2014</td>
+      <td class="col_name">IPHONE APP DEVELOPMENT</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">28/30</td>
+    
+      <td class="col_rCourseQuality">2.19</td>
+    
+      <td class="col_rInstructorQuality">2.44</td>
+    
+      <td class="col_rDifficulty">2.38</td>
+    
+      <td class="col_rAmountLearned">2.23</td>
+    
+      <td class="col_rWorkRequired">2.46</td>
+    
+      <td class="col_rReadingsValue">1.77</td>
+    
+      <td class="col_rCommAbility">2.54</td>
+    
+      <td class="col_rInstructorAccess">2.69</td>
+    
+      <td class="col_rStimulateInterest">2.15</td>
+    
+      <td class="col_rTAQuality">2.00</td>
+    
+      <td class="col_rRecommendMajor">2.15</td>
+    
+      <td class="col_rRecommendNonMajor">2.00</td>
+    
+    </tr>
+  
+  
+  </tbody>
+</table>
+</td>
+    </tr>
+      
+    
+  
+    
+    <tr id="row_display_2" class="row_display" onclick="toggle_course_row(2)">
+      <td class="col_icon">
+        <div class="fold-icon" title="Expand"></div>
+      </td>
+      <td class="col_instructor">
+        <a href="../instructor/5728-JAMES-SHIN-YOUNG
+<view-source:https://penncoursereview.com/instructor/5728-JAMES-SHIN-YOUNG>" onclick="toggle_course_row(2)">
+          JAMES SHIN YOUNG
+        </a>
+      </td>
+      
+        
+        
+          
+          <td class="col_rCourseQuality">
+            <span class="cell_average">2.00</span>
+            <span class="cell_recent">2.00</span>
+          </td>
+          
+          <td class="col_rInstructorQuality">
+            <span class="cell_average">2.46</span>
+            <span class="cell_recent">2.46</span>
+          </td>
+          
+          <td class="col_rDifficulty">
+            <span class="cell_average">2.20</span>
+            <span class="cell_recent">2.20</span>
+          </td>
+          
+          <td class="col_rAmountLearned">
+            <span class="cell_average">2.00</span>
+            <span class="cell_recent">2.00</span>
+          </td>
+          
+          <td class="col_rWorkRequired">
+            <span class="cell_average">2.10</span>
+            <span class="cell_recent">2.10</span>
+          </td>
+          
+          <td class="col_rReadingsValue">
+            <span class="cell_average">2.20</span>
+            <span class="cell_recent">2.20</span>
+          </td>
+          
+          <td class="col_rCommAbility">
+            <span class="cell_average">1.90</span>
+            <span class="cell_recent">1.90</span>
+          </td>
+          
+          <td class="col_rInstructorAccess">
+            <span class="cell_average">3.30</span>
+            <span class="cell_recent">3.30</span>
+          </td>
+          
+          <td class="col_rStimulateInterest">
+            <span class="cell_average">3.00</span>
+            <span class="cell_recent">3.00</span>
+          </td>
+          
+          <td class="col_rTAQuality">
+            <span class="cell_average"></span>
+            <span class="cell_recent"></span>
+          </td>
+          
+          <td class="col_rRecommendMajor">
+            <span class="cell_average">2.44</span>
+            <span class="cell_recent">2.44</span>
+          </td>
+          
+          <td class="col_rRecommendNonMajor">
+            <span class="cell_average">1.00</span>
+            <span class="cell_recent">1.00</span>
+          </td>
+          
+        
+    </tr>
+    <tr class="row_hidden" id="row_hidden_2">
+      <td class="td_hidden" colspan="50">
+<table id="section-table" class="section-table">
+  <thead>
+    <tr>
+      <td class="sec_th col_icon">
+        <div title="Comments"></div>
+      </td>
+      <td class="sec_th col_semester">Semester</td>
+      <td class="sec_th col_name">Name</td>
+      <td class="sec_th col_section">Section</td>
+      <td class="sec_th col_responses">Responses</td>
+      
+      <td class="sec_th col_rCourseQuality">
+        Course Quality
+      </td>
+      
+      <td class="sec_th col_rInstructorQuality">
+        Instructor Quality
+      </td>
+      
+      <td class="sec_th col_rDifficulty">
+        Difficulty
+      </td>
+      
+      <td class="sec_th col_rAmountLearned">
+        Amount Learned
+      </td>
+      
+      <td class="sec_th col_rWorkRequired">
+        Amount of Work
+      </td>
+      
+      <td class="sec_th col_rReadingsValue">
+        Value of Readings
+      </td>
+      
+      <td class="sec_th col_rCommAbility">
+        Instructor Communication
+      </td>
+      
+      <td class="sec_th col_rInstructorAccess">
+        Instructor Accessibility
+      </td>
+      
+      <td class="sec_th col_rStimulateInterest">
+        Ability to Stimulate Interest
+      </td>
+      
+      <td class="sec_th col_rRecommendMajor">
+        Recommend for Majors
+      </td>
+      
+      <td class="sec_th col_rRecommendNonMajor">
+        Recommend for Non-Majors
+      </td>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr class="sec_row_display">
+      <td class="col_icon">
+      
+      </td>
+      <td class="col_semester">Fall 2011</td>
+      <td class="col_name">IPHONE APP DEVELOPMENT</td>
+      <td class="col_section">001</td>
+      <td class="col_responses">14/21</td>
+    
+      <td class="col_rCourseQuality">2.00</td>
+    
+      <td class="col_rInstructorQuality">2.46</td>
+    
+      <td class="col_rDifficulty">2.20</td>
+    
+      <td class="col_rAmountLearned">2.00</td>
+    
+      <td class="col_rWorkRequired">2.10</td>
+    
+      <td class="col_rReadingsValue">2.20</td>
+    
+      <td class="col_rCommAbility">1.90</td>
+    
+      <td class="col_rInstructorAccess">3.30</td>
+    
+      <td class="col_rStimulateInterest">3.00</td>
+    
+      <td class="col_rRecommendMajor">2.44</td>
+    
+      <td class="col_rRecommendNonMajor">1.00</td>
+    
+    </tr>
+  
+  
+  </tbody>
+</table>
+</td>
+    </tr>
+      
+    
+  
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+  <div class="clear"></div>
+
+      </div>
+    </div>
+    
+
+    <div id="footer">
+      <div id="footer-inner" class="container_12">
+        <a href="../about <view-source:https://penncoursereview.com/about>">About</a>
+<span>|</span>
+<a href="../faq <view-source:https://penncoursereview.com/faq>">FAQs</a>
+<span>|</span>
+<a href="https://docs.google.com/spreadsheet/viewform?formkey=dFNZYW92cFM1YnpKUzlLcXRDZVQ4VGc6MQ#gid=0faq
+<view-source:https://docs.google.com/spreadsheet/viewform?formkey=dFNZYW92cFM1YnpKUzlLcXRDZVQ4VGc6MQ#gid=0faq>">Feedback</a>
+<span>|</span>
+<a href="https://weblogin.pennkey.upenn.edu/logout
+<view-source:https://weblogin.pennkey.upenn.edu/logout>">Logout</a>
+
+        <p id="copyright">
+          <!--[if IE 8]>
+          <span style="color:#CC0000;">Best viewed in Chrome or Firefox. </span>
+          <![endif]-->
+          Copyright &copy; 2016
+          <a href="http://pennlabs.org <view-source:http://pennlabs.org/>"><strong>Penn Labs</strong></a>
+          |
+          Hosted by
+          <a href="http://stwing.upenn.edu/ <view-source:http://stwing.upenn.edu/>"><strong>STWing</strong></a>
+          <!--[if IE 8>]
+          <span style="color:#CC0000;">Best viewed in Chrome or Firefox. </span>
+          <![endif]-->
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+  
+<div id="choose-cols">
+  <div class="container_12">
+    <div id="choose-cols-inner">
+      <div class="prefix_3 grid_6 suffix_3">
+        <div id="choose-cols-content" class="shadow disable-selection">
+        
+          <h1>Choose Columns to Display</h1>
+          
+          <div id="select-all">
+            <p>
+              <input type="checkbox" id="checkbox_all" name="all" value="all"
+                onchange="toggle_choose_cols_all()" />
+              <label for="checkbox_all">Select/Deselect All</label>
+            </p>
+          </div>
+          
+          <div class="col">            
+            
+            <p>
+              <input type="checkbox" id="checkbox_rCourseQuality" name="rCourseQuality" value="rCourseQuality" />
+              <label for="checkbox_rCourseQuality">Course Quality</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rInstructorQuality" name="rInstructorQuality" value="rInstructorQuality" />
+              <label for="checkbox_rInstructorQuality">Instructor Quality</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rDifficulty" name="rDifficulty" value="rDifficulty" />
+              <label for="checkbox_rDifficulty">Difficulty</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rAmountLearned" name="rAmountLearned" value="rAmountLearned" />
+              <label for="checkbox_rAmountLearned">Amount Learned</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rWorkRequired" name="rWorkRequired" value="rWorkRequired" />
+              <label for="checkbox_rWorkRequired">Amount of Work</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rReadingsValue" name="rReadingsValue" value="rReadingsValue" />
+              <label for="checkbox_rReadingsValue">Value of Readings</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rCommAbility" name="rCommAbility" value="rCommAbility" />
+              <label for="checkbox_rCommAbility">Instructor Communication</label>
+            </p>
+            
+          </div>
+                    
+          <div class="col">
+            
+            <p>
+              <input type="checkbox" id="checkbox_rInstructorAccess" name="rInstructorAccess" value="rInstructorAccess" />
+              <label for="checkbox_rInstructorAccess">Instructor Accessibility</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rStimulateInterest" name="rStimulateInterest" value="rStimulateInterest" />
+              <label for="checkbox_rStimulateInterest">Ability to Stimulate Interest</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rTAQuality" name="rTAQuality" value="rTAQuality" />
+              <label for="checkbox_rTAQuality">TA Quality</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rRecommendMajor" name="rRecommendMajor" value="rRecommendMajor" />
+              <label for="checkbox_rRecommendMajor">Recommend for Majors</label>
+            </p>
+            
+            <p>
+              <input type="checkbox" id="checkbox_rRecommendNonMajor" name="rRecommendNonMajor" value="rRecommendNonMajor" />
+              <label for="checkbox_rRecommendNonMajor">Recommend for Non-Majors</label>
+            </p>
+              
+          </div>
+          
+          <div style="clear:both"></div>
+          <div id="buttons">
+            <input type="button" value="Submit" onclick="submit_choose_cols()" />
+            <input type="button" value="Cancel" onclick="cancel_choose_cols()" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="tutorial_overlay">
+  <div class="container_12">
+    <div id="tut-close-button" class="tut-elem"
+      onclick="$('#tutorial_overlay').hide()">      
+    </div>
+    
+    <div id="tut-sort" class="tut-elem">
+      <p>Click on column headings to sort by that criteria.</p>
+    </div>
+    
+    <div id="tut-viewmode" class="tut-elem">
+      <div class="inner">
+        <p>Click here to choose how the scores are displayed. </p>
+        <p>"Average" shows the aggregate score over multiple sections of the class taught.</p>
+        <p>"Recent" shows the score from the most recent section of the class. </p>
+      </div>
+    </div>
+    
+    <div id="tut-ratings" class="tut-elem">
+      <div class="inner">
+        <p>The numerical ratings translate as follows:</p>
+        <table>
+          <tr>
+            <td>4.0</td>
+            <td>Excellent</td>
+          </tr>
+          <tr>
+            <td>3.0</td>
+            <td>Very Good</td>
+          </tr>
+          <tr>
+            <td>2.0</td>
+            <td>Good</td>
+          </tr>
+          <tr>
+            <td>1.0</td>
+            <td>Poor</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+        
+    <div id="tut-choosecols" class="tut-elem">
+      <div class="inner">
+        <p>Click here to choose which rating criteria appear in the table.</p>
+        <p>Further information about the class, such as "Amount of Work" or "Instructor Communication", can be added to display in the table using this option. </p>
+      </div>
+    </div>
+    
+    <div id="tut-row" class="tut-elem">
+      <div class="inner">
+        <p>Click the "+" to see individual semesters and available written reviews.</p>
+        <p>Click on the link to go to the respective page.</p>
+      </div>
+    </div>
+  
+    
+    
+  </div>
+  
+  
+</div>
+
+
+
+  <div id="hidden">
+    
+    
+  </div>
+<!-- UserVoice JavaScript SDK (only needed once on a page) -->
+<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/DK7y9di1OfqvyeKq0bB94g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+
+<!-- A tab to launch the Classic Widget -->
+<script>
+UserVoice = window.UserVoice || [];
+UserVoice.push(['showTab', 'classic_widget', {
+  mode: 'full',
+  primary_color: '#cc6d00',
+  link_color: '#007dbf',
+  default_mode: 'feedback',
+  forum_id: 177712,
+  tab_label: 'Feedback',
+  tab_color: '#cc6d00',
+  tab_position: 'bottom-right',
+  tab_inverted: false
+}]);
+</script>
+</body>
+</html>
+
