@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Reads in the course review files, produces a data model of semesters of Penn students correlated with 
+ * Mediates the reading in and parsing of the course review files, a data structure of semesters of Penn students correlated with 
  * their course preferences. 
  * @author mayamudambi
  *
@@ -23,7 +24,6 @@ public class DataProducer {
 		listingReader = new FileReader("ReviewListing.txt");
 		
 		for(String fileName : listingReader.getLines()){
-			System.out.println(fileName);
 			FileReader reviewReader = new FileReader(fileName);
 			ReviewParser parser = new ReviewParser(reviewReader.getLines());
 			
