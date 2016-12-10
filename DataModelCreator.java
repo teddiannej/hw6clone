@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -7,11 +8,11 @@ import java.util.HashMap;
  * Creates a text file that serves as a data model for the Mahout recommender engine.
  * @author mayamudambi
  */
-
 public class DataModelCreator {
 
-	String modelFileName;
+	String modelFileName; //Name of the text file to write to
 	
+	/*Appropriate weights to place on each course attribute when calculating overall rating.*/
 	private double courseQuality;
     private double instructorQuality;
     private double difficulty;
@@ -25,6 +26,24 @@ public class DataModelCreator {
     private double recommendMajor;
     private double recommendNonMajor;
 	
+    /**
+     * Creates a DataModelCreator object, which takes in the appropriate weights the user wishes to place
+     * on each course attribute, and has the ability to convert a data structure associating users with reviews 
+     * into a data model text file. 
+     * @param modelFile filename to write to 
+     * @param courseQual
+     * @param instQual
+     * @param diff
+     * @param amLrnd
+     * @param workReq
+     * @param readVal
+     * @param comm
+     * @param instAcc
+     * @param stimInst
+     * @param TA
+     * @param recMaj
+     * @param recNonMaj
+     */
 	public DataModelCreator(String modelFile, double courseQual, double instQual, double diff, double amLrnd, double workReq, 
 			double readVal, double comm, double instAcc, double stimInst, double TA, double recMaj, double recNonMaj){
 		
@@ -43,22 +62,39 @@ public class DataModelCreator {
     	recommendNonMajor = recNonMaj;
 	}
 	
-	
-	public void createDataFile(HashMap<String, ArrayList<Review>> semesterPreferences) throws FileNotFoundException{
+	/**
+	 * Given a data structure that associates users with reviews, writes each review in a text file
+	 * in the proper format for a Mahout recommender engine.
+	 * @param semesterPreferences
+	 * @throws FileNotFoundException
+	 */
+	public void createDataFile(HashMap<Course, Integer> courseListing, HashMap<String, ArrayList<Review>> semesterPreferences) throws FileNotFoundException{
 		PrintWriter writer = new PrintWriter(modelFileName);
 		
-		for(String semester : semesterPreferences.keySet()){
-			for(Review review : semesterPreferences.get(semester)){
-				String dataLine = semester + "," + review.getCourse().getCourseCode() + "," + getReviewRating(review); 
+		for(String semester : semesterPreferences.keySet()){ //For each user
+			for(Review review : semesterPreferences.get(semester)){ //Produces the appropriate line of text for each review
+				
+				/* The data is structured in the format user, course, overall rating (all integers)*/
+				
+				long courseID = (long)courseListing.get(review.getCourse()); //numerical course ID
+				long userID = Long.parseLong(semester); //numerical userID
+								
+				String dataLine = userID + "," + courseID + "," + (getReviewRating(review)); 
 				writer.println(dataLine);
 			}
 		}
 	    writer.close();
 	}
 	
+	/**
+	 * Given the appropriate 'weights' to place on each of a course's twelve possible attributes, calculates an 
+	 * overall numerical rating for the review.
+	 * @param r a given Review
+	 * @return the overall rating for the review
+	 */
 	private double getReviewRating(Review r){
 		
-		int ratingCategories = generateSignificantCategories(r);
+		int ratingCategories = generateSignificantCategories(r); //Determines how many categories this review has data for
 		
 		double courseQualityWeight = (double)(courseQuality/5.0)*(r.getCourseQuality());
 	    double instructorQualityWeight = (double)(instructorQuality/5.0)*(r.getInstructorQuality());
@@ -77,12 +113,25 @@ public class DataModelCreator {
 				readingsValueWeight + communicationWeight + instructorAccessWeight + stimulateInterestWeight + taQualityWeight +
 				recommendMajorWeight + nonRecommendMajorWeight)/ratingCategories;
 		
+		if(ratingCategories == 0){
+			rating = 0.0;
+		}
+		
 		return rating;
 	}
 	
+	/**
+	 * As not all reviews have data for each category,
+	 * this method determines how many rating categories this Review has data for.
+	 * This aids in the calculation of the overall rating.
+	 * A category with no data is indicated by being 0.0
+	 * @param r a given Review
+	 * @return the number of rating categories this Review has data for
+	 */
 	private int generateSignificantCategories(Review r){
 		int ratingCategories = 0;
 		
+		/* If a rating category is not 0.0, indicates that there is data for it.*/
 		if(r.getCourseQuality() != 0.0){
 			ratingCategories++;
 		}

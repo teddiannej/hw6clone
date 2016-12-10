@@ -45,8 +45,7 @@ public class FileReader {
 	    {
 	    	line = scan.nextLine();
 	    	line = line.trim();
-	    	lines.add(line);
-	   
+	    	lines.add(line);	   
 	    }
 	    
 	    scan.close();
