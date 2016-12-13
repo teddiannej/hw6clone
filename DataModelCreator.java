@@ -71,17 +71,26 @@ public class DataModelCreator {
 	public void createDataFile(HashMap<Course, Integer> courseListing, HashMap<String, ArrayList<Review>> semesterPreferences) throws FileNotFoundException{
 		PrintWriter writer = new PrintWriter(modelFileName);
 		
+		int userID = 1;
 		for(String semester : semesterPreferences.keySet()){ //For each user
+			
 			for(Review review : semesterPreferences.get(semester)){ //Produces the appropriate line of text for each review
 				
 				/* The data is structured in the format user, course, overall rating (all integers)*/
 				
 				long courseID = (long)courseListing.get(review.getCourse()); //numerical course ID
-				long userID = Long.parseLong(semester); //numerical userID
 								
-				String dataLine = userID + "," + courseID + "," + (getReviewRating(review)); 
+				String dataLine;
+				if(semester.equals("Human User")){ //Assigns the human's input with the ID of 0
+					dataLine =  0 + "," + courseID + "," + (getReviewRating(review)); 
+				}
+				else{
+					dataLine = userID + "," + courseID + "," + (getReviewRating(review)); 
+				}
 				writer.println(dataLine);
 			}
+			
+			userID++;
 		}
 	    writer.close();
 	}
@@ -96,22 +105,22 @@ public class DataModelCreator {
 		
 		int ratingCategories = generateSignificantCategories(r); //Determines how many categories this review has data for
 		
-		double courseQualityWeight = (double)(courseQuality/5.0)*(r.getCourseQuality());
-	    double instructorQualityWeight = (double)(instructorQuality/5.0)*(r.getInstructorQuality());
-	    double difficultyWeight = (double)(difficulty/5.0)*(r.getDifficulty());
-	    double amountLearnedWeight = (double)(amountLearned/5.0)*(r.getAmountLearned()); 
-	    double workRequiredWeight = (double)(workRequired/5.0)*(r.getWorkRequired());
-	    double readingsValueWeight = (double)(readingsValue/5.0)*(r.getReadingsValue());
-	    double communicationWeight = (double)(communication/5.0)*(r.getCommunication());
-	    double instructorAccessWeight = (double)(instructorAccess/5.0)*(r.getInstructorAccess());
-	    double stimulateInterestWeight = (double)(stimulateInterest/5.0)*(r.getStimulateInterest());
-		double taQualityWeight = (double)(taQuality/5.0)*(r.getTaQuality());
-	    double recommendMajorWeight = (double)(recommendMajor/5.0)*(r.getRecommendMajor());
-	    double nonRecommendMajorWeight = (double)(recommendNonMajor/5.0)*(r.getRecommendNonMajor());
+		double courseQualityWeight = (double)(courseQuality)*(r.getCourseQuality());
+	    double instructorQualityWeight = (double)(instructorQuality)*(r.getInstructorQuality());
+	    double difficultyWeight = (double)(difficulty)*(r.getDifficulty());
+	    double amountLearnedWeight = (double)(amountLearned)*(r.getAmountLearned()); 
+	    double workRequiredWeight = (double)(workRequired)*(r.getWorkRequired());
+	    double readingsValueWeight = (double)(readingsValue)*(r.getReadingsValue());
+	    double communicationWeight = (double)(communication)*(r.getCommunication());
+	    double instructorAccessWeight = (double)(instructorAccess)*(r.getInstructorAccess());
+	    double stimulateInterestWeight = (double)(stimulateInterest)*(r.getStimulateInterest());
+		double taQualityWeight = (double)(taQuality)*(r.getTaQuality());
+	    double recommendMajorWeight = (double)(recommendMajor)*(r.getRecommendMajor());
+	    double nonRecommendMajorWeight = (double)(recommendNonMajor)*(r.getRecommendNonMajor());
 		
 		double rating = (double)(courseQualityWeight + instructorQualityWeight + difficultyWeight + amountLearnedWeight + workRequiredWeight +
 				readingsValueWeight + communicationWeight + instructorAccessWeight + stimulateInterestWeight + taQualityWeight +
-				recommendMajorWeight + nonRecommendMajorWeight)/ratingCategories;
+				recommendMajorWeight + nonRecommendMajorWeight)/(ratingCategories);
 		
 		if(ratingCategories == 0){
 			rating = 0.0;

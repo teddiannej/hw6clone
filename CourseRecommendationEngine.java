@@ -39,19 +39,23 @@ public class CourseRecommendationEngine {
 		    double recommendNonMajor = scan.nextDouble();
 		    
 		    
-			ReviewDataProducer dataProducer = new ReviewDataProducer();
+			DataProducer dataProducer = new DataProducer();
+			HashMap<Course, Integer> springCourses = new HashMap<Course, Integer>();
 
 			
-			/*System.out.println("Of the following courses offered to CS students, which have you taken?");
+			System.out.println("Of the following courses offered to CS students, which have you taken?");
 			System.out.println("Please indicate the course by entering in its corresponding number. Enter 0 to end entering reviews.");
 			
-			for(int x = 1; x<=dataProducer.getTotalCourses().size(); x++){
-				for(Course c : dataProducer.getTotalCourses().keySet()){
-					if(dataProducer.getTotalCourses().get(c) == x){
-						System.out.print(dataProducer.getTotalCourses().get(c) + ". ");
-						System.out.print(c.getCourseCode() + " ");
+			int counter = 1;
+			for(int i = 1; i < dataProducer.getMasterCourseList().size()+1; i++){
+				for(Course c : dataProducer.getMasterCourseList().keySet()){
+					if(dataProducer.getMasterCourseList().get(c) == i){
+						System.out.println(dataProducer.getMasterCourseList().get(c) + ". ");
+						System.out.println(c.getCourseCode() + " ");
 						System.out.println(c.getCourseTitle());
-						break;
+						if(!c.getInstructor().equals("N/A")){
+							springCourses.put(c, dataProducer.getMasterCourseList().get(c));
+						}
 					}
 				}
 			}
@@ -88,8 +92,8 @@ public class CourseRecommendationEngine {
 				System.out.println("How likely you would be to recommend the course to non-Computer Science majors:");
 			    recommendNonMajor = scan.nextDouble();
 			    
-			    for(Course c : dataProducer.getTotalCourses().keySet()){
-			    	if(dataProducer.getTotalCourses().get(c) == courseChoice){
+			    for(Course c : dataProducer.getMasterCourseList().keySet()){
+			    	if(dataProducer.getMasterCourseList().get(c) == courseChoice){
 			    		Review r = new Review(c,courseQuality, instructorQuality, difficulty, amountLearned, workRequired, 
 								readingsValue, communication, instructorAccess, stimulateInterest, taQuality, recommendMajor, recommendNonMajor);
 						userReviews.add(r);
@@ -100,29 +104,21 @@ public class CourseRecommendationEngine {
 			    courseChoice = scan.nextInt();
 			}
 			
-			dataProducer.addUserPreferences(userReviews);*/
+			dataProducer.addUserPreferences(userReviews);	
 			
-			SpringScheduleProducer springScheduler = new SpringScheduleProducer();
-			//springScheduler.assignCourseID(dataProducer.getTotalCourses());
+			DataModelCreator creator = new DataModelCreator("blank_text.txt", courseQuality, instructorQuality, difficulty, amountLearned, workRequired, 
+				readingsValue, communication, instructorAccess, stimulateInterest, taQuality, recommendMajor, recommendNonMajor);
+			creator.createDataFile(dataProducer.getMasterCourseList(), dataProducer.getData());
 			
-			(Spring2017Course c : springScheduler.getCourses().keySet()){
+			Recommender r = new Recommender("blank_text.txt");
+
+			r.generateRecommendations(springCourses);
+			System.out.println(r.getRecommendedCourses().size());
+			for(Course c : r.getRecommendedCourses()){
 				System.out.println(c.getCourseTitle());
 			}
 			
-			
-			/*DataModelCreator creator = new DataModelCreator("blank_text.txt", courseQuality, instructorQuality, difficulty, amountLearned, workRequired, 
-				readingsValue, communication, instructorAccess, stimulateInterest, taQuality, recommendMajor, recommendNonMajor);
-			creator.createDataFile(dataProducer.getTotalCourses(), dataProducer.getData());
-			
-			Recommender r = new Recommender("blank_text.txt");
-			
-			System.out.println("How many recommendations would you like? Please enter a number from 1 to 5.");
-			int recommendationNumber = scan.nextInt();
-			
-			r.generateRecommendations(recommendationNumber, springScheduler.getCourses());
-			System.out.println(r.getRecommendedCourses().size());
-			
-			for(Spring2017Course c : r.getRecommendedCourses()){
+			for(Course c : r.getRecommendedCourses()){
 				System.out.println(c.getCourseCode());
 				System.out.println(c.getCourseTitle());
 				System.out.println(c.getCredits());
@@ -132,9 +128,6 @@ public class CourseRecommendationEngine {
 					System.out.println(m);
 				}
 			}
-			
-			*/
-
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block

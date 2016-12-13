@@ -22,7 +22,13 @@ public class ReviewParserTest {
 	@Test
 	public void testGetCourse() {
 		
-		assertEquals("Senior Project", r.getCourse().getCourseTitle());
+		String coursecode = "";
+		for(String s : r.getReviews().keySet()){
+			coursecode = r.getReviews().get(s).getCourse().getCourseTitle();
+			break;
+		}
+		
+		assertEquals("Senior Project", coursecode);
 	}
 
 	@Test

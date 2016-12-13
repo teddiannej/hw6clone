@@ -37,8 +37,12 @@ public class ReviewParser extends Parser {
 
 		String description = findDataPoint(lines, "<p class=\"desc\">(.*)\\s*", 1);	
 		lines = trimmedList(lines, getLineIndex(), lines.size());
+		
+		
+		ArrayList<String> times = new ArrayList<String>();
+		times.add("No meeting times in Spring 2017");
 
-		Course c = new Course(code, title, description); //Course associated with the review; will be added to each individual review
+		Course c = new Course(code, title, description, "N/A", "N/A", times); //Course associated with the review; will be added to each individual review
 		return c;
 	}
 	
@@ -166,4 +170,8 @@ public class ReviewParser extends Parser {
 			return false;
 		}
 	}	
+	
+	public Course getCourse(){
+		return course;
+	}
 }

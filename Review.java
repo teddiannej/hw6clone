@@ -63,6 +63,15 @@ public class Review {
 	public Course getCourse() {
 		return course;
 	}
+	
+	/**
+	 * Mutator method for the course associated with this review
+	 * @param c
+	 */
+	public void setCourse(Course c) {
+		course = c;
+	}
+	
 	/**
 	 * Returns the course quality metric
 	 * @return courseQuality

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class TimeTableParser extends Parser {
 
 	private ArrayList<String> lines;
-	private ArrayList<Spring2017Course> courses; //Will represent all of the courses in the timetable
+	private ArrayList<Course> courses; //Will represent all of the courses in the timetable
 	private String nextMeetingStart; //The regular expressions template for a meeting time data point
 	
 	/**
@@ -27,9 +27,9 @@ public class TimeTableParser extends Parser {
 	 * said courses. 
 	 * @param lines 
 	 */
-	private ArrayList<Spring2017Course> parseCourses(){
+	private ArrayList<Course> parseCourses(){
 		
-		ArrayList<Spring2017Course> classes = new ArrayList<Spring2017Course>(); 
+		ArrayList<Course> classes = new ArrayList<Course>(); 
 		
 		String codeTitleCredits = "(CI\\w\\s*-\\d{3})\\s+(.*)\\s{4,}?(\\d.*CU)"; //Template for the first desired line, that contains course code, course title, and credits	
 		String meetingTimesInstructor = nextMeetingStart; //Template for second desired line, that contains meeting times and the instructor
@@ -38,6 +38,8 @@ public class TimeTableParser extends Parser {
 							
 			/*Record the course code, course title, and number of credits*/
 			String code = findDataPoint(lines, codeTitleCredits, 1);
+			code = code.replaceAll("\\s",""); //Removes spaces
+			
 			String title = findDataPoint(lines, codeTitleCredits, 2);
 			String credits = findDataPoint(lines, codeTitleCredits, 3);
 			
@@ -62,7 +64,7 @@ public class TimeTableParser extends Parser {
 				lines = trimmedList(lines, getLineIndex()+1, lines.size()); //Go down a line
 			} while(!endOfSection(line)); //If the at the last meeting time, go to next course
 			
-			Spring2017Course c = new Spring2017Course(code, title, "", instructor, credits, meetingTimes); //Record course	
+			Course c = new Course(code, title, "", instructor, credits, meetingTimes); //Record course	
 			classes.add(c);			
 		}
 			
@@ -73,7 +75,7 @@ public class TimeTableParser extends Parser {
 	 * Accessor method for the courses ArrayList.
 	 * @return courses
 	 */
-	public ArrayList<Spring2017Course> getCourses() {
+	public ArrayList<Course> getCourses() {
 		return courses;
 	}
 

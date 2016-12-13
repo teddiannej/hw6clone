@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.impl.common.LongPrimitiveIterator;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
@@ -14,46 +15,43 @@ import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.recommender.UserBasedRecommender;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 
+/**
+ * Generates a user-based recommendation for courses utilizing Mahout
+ * @author mayamudambi
+ *
+ */
 public class Recommender {
 
 	private FileDataModel dataModel;	
-	private ArrayList<Spring2017Course> recommendations;
+	private ArrayList<Course> recommendations;
 	
 	public Recommender(String fileName) throws IOException, TasteException{
 		dataModel = new FileDataModel(new File(fileName));
-		recommendations = new ArrayList<Spring2017Course>();
+
 	}
 	
-	public void generateRecommendations(int numberOfRecommendations, HashMap<Spring2017Course, Integer> availableCourses) throws TasteException{
+	public void generateRecommendations(HashMap<Course, Integer> availableCourses) throws TasteException{
 		UserSimilarity similarity = new PearsonCorrelationSimilarity(dataModel);
-		UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0.02, similarity, dataModel);
+		UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0, similarity, dataModel);
 		UserBasedRecommender recommender = new GenericUserBasedRecommender(dataModel, neighborhood, similarity);
-		
-		int index = 0;
-		int numberRecommended = 0;
-		List<RecommendedItem> allRecommendations = recommender.recommend(0, availableCourses.size());
 
-		while(numberRecommended < numberOfRecommendations && index < allRecommendations.size()){
-			
-			RecommendedItem recommendation = allRecommendations.get(index);
-			long itemID = recommendation.getItemID();
-			
-			if(availableCourses.containsValue(itemID)){
-				
-				for(Spring2017Course c : availableCourses.keySet()){
-					if(availableCourses.get(c) == itemID){
-						recommendations.add(c);
-						numberRecommended++;
-						break;
-					}
+		List<RecommendedItem> allRecommendations = recommender.recommend(0, 10);
+		ArrayList<Course> rec = new ArrayList<Course>();
+		for(RecommendedItem r : allRecommendations){
+			int itemID = (int)r.getItemID();
+			for(Course c : availableCourses.keySet()){
+				if(availableCourses.get(c) == itemID){
+					rec.add(c);
+					break;
 				}
-
 			}
-			index++;
 		}
+		
+		recommendations = rec;	
 	}
 	
-	public ArrayList<Spring2017Course> getRecommendedCourses(){
+	public ArrayList<Course> getRecommendedCourses(){
+		
 		return recommendations;
 	}
 }

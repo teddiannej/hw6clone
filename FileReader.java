@@ -1,7 +1,11 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.Scanner;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 /**
  * This class reads in the HTML source of a file that is specified and produces a list of all of its lines.
@@ -33,10 +37,9 @@ public class FileReader {
 	 */
 	private void readFile (String file) throws FileNotFoundException{
         
-		File f = new File (file);
 		
 		//Read all of the text
-		Scanner scan = new Scanner(f);
+		Scanner scan = new Scanner(file);
 		
 		String line = new String("");
 
@@ -47,7 +50,6 @@ public class FileReader {
 	    	line = line.trim();
 	    	lines.add(line);	   
 	    }
-	    
 	    scan.close();
 	}
 	

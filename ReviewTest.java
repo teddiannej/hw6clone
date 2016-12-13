@@ -16,7 +16,9 @@ public class ReviewTest {
 	@Before
 	public void setUp() throws Exception {
 		
-		c = new Course("BIO-101", "Introduction to Biology", "Introductory biology course");		
+		ArrayList<String >times = new ArrayList<String>();
+		times.add("TR 9:00-10:30am");
+		c = new Course("BIO-101", "Introduction to Biology", "Introductory biology course", "J Smith", "2 CU", times);		
 		r = new Review(c, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0,0, 0.0, 0.0);
 	
 	}
@@ -25,7 +27,7 @@ public class ReviewTest {
 	public void testGetCourse() {
 		ArrayList<String >times = new ArrayList<String>();
 		times.add("TR 9:00-10:30am");
-		Spring2017Course sCourse = new Spring2017Course("BIO-101", "Introduction to Biology", "Introductory biology course", "J Smith", "2 CU", times);
+		Course sCourse = new Course("BIO-101", "Introduction to Biology", "Introductory biology course", "J Smith", "2 CU", times);
 		r = new Review(sCourse, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0,0, 0.0, 0.0);
 		
 		assertEquals(sCourse, r.getCourse());
